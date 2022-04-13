@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       <main className=' flex justify-center'>
-        <div className=' w-full lg:w-[1024px] p-2'>{children}</div>
+        <div className=' w-full lg:w-[1024px] p-2 pt-0'>{children}</div>
       </main>
       <Footer />
     </>
