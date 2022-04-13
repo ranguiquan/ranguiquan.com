@@ -1,7 +1,12 @@
 export default function Home({ data }) {
   return (
     <div>
-      <h1 className=" font-bold  underline">index</h1>
+      <p className=' h-screen'>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod rerum
+        animi earum omnis totam aliquid pariatur ipsa? Soluta laborum iste
+        neque! Laudantium cupiditate distinctio exercitationem quo corrupti
+        cumque saepe eum.
+      </p>
     </div>
   );
 }

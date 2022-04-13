@@ -2,8 +2,9 @@ import { notion } from '../lib/notion';
 
 export async function getStaticProps() {
   const databaseID = process.env.DATABASE_ID;
-  console.log(databaseID);
-  const data = await notion.databases.retrieve({ database_id: databaseID });
+  const pageID = process.env.PAGE_ID;
+  const data = await notion.pages.retrieve({ page_id: pageID });
+
   return {
     props: { data }, // will be passed to the page component as props
   };
