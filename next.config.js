@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['www.notion.so']
-  }
-}
+    domains: ['www.notion.so', ],
+  },
+};
 
 module.exports = nextConfig
