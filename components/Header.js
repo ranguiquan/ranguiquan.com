@@ -2,7 +2,7 @@ const Header = () => {
   const routes = ['posts', 'profile', 'about'];
 
   return (
-    <header className='sticky h-12 bg-background shadow-sm '>
+    <header className='sticky top-0 z-10 h-12 bg-background shadow-sm'>
       <div className='m-auto  w-full lg:w-[1024px] flex justify-between items-center h-full text-headline'>
         <a href='#'>
           <span className=' font-bold text-lg ml-2'>🔉RGQ.PLUS</span>
