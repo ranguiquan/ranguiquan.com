@@ -5,7 +5,7 @@ import { PostTags } from '../Post/PostTags';
 export const PostCard = ({ post }) => {
   return (
     <Link href={`/posts/${post.id}`} passHref>
-      <div className='flex justify-between rounded-3xl overflow-hidden hover:bg-gray-200 cursor-pointer'>
+      <div className='flex justify-between rounded-3xl overflow-hidden hover:bg-gray-100 cursor-pointer'>
         <div className=' min-h-[150px] w-2/5 relative block'>
           <Image
             src={post.cover}
