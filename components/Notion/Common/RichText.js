@@ -1,4 +1,4 @@
-const colors = {
+export const colors = {
   default: 'text-rich-default',
   gray: 'text-rich-gray',
   brown: 'text-rich-brown',
@@ -26,7 +26,7 @@ const RichText = ({ rich_text }) => {
   if (type !== 'text') {
     return <span className=' text-red-600'> !!!unsupported!!! </span>;
   }
-
+  // TODO: It's not enough, use semantic label, fool.
   // This is for '\n' to wrap properly.
   const divided_text = plain_text.split('\n');
   const res = divided_text.slice(0, divided_text.length - 1).map((i, index) => {
@@ -34,11 +34,11 @@ const RichText = ({ rich_text }) => {
     return (
       <>
         <span
-          className={`${colors[color]} ${bold ? 'font-bold' : ''} ${
-            italic ? 'italic' : ''
-          } ${strikethrough ? 'line-through' : ''} ${
-            underline ? 'underline' : ''
-          } ${code ? 'font-mono' : ''}`}
+          className={`${bold ? 'font-bold' : ''} ${italic ? 'italic' : ''} ${
+            strikethrough ? 'line-through' : ''
+          } ${underline ? 'underline' : ''} ${
+            code ? 'font-mono bg-rich-code_background text-rich-code' : ''
+          } ${colors[color]}`}
           key={index}>
           {i}
         </span>
@@ -46,15 +46,36 @@ const RichText = ({ rich_text }) => {
       </>
     );
   });
+  if (href) {
+    return (
+      <a href={href} className='underline hover:no-underline'>
+        {res}
+        <span
+          className={`${bold ? 'font-bold' : ''} ${italic ? 'italic' : ''} ${
+            strikethrough ? 'line-through' : ''
+          } ${underline ? 'underline' : ''} ${
+            code
+              ? 'font-mono bg-rich-code_background text-rich-code pl-1 pr-1 rounded-sm'
+              : ''
+          } ${colors[color]}`}
+          key={divided_text.length - 1}>
+          {divided_text[divided_text.length - 1]}
+        </span>
+      </a>
+    );
+  }
+
   return (
     <>
       {res}
       <span
-        className={`${colors[color]} ${bold ? 'font-bold' : ''} ${
-          italic ? 'italic' : ''
-        } ${strikethrough ? 'line-through' : ''} ${
-          underline ? 'underline' : ''
-        } ${code ? 'font-mono bg-tag-gray' : ''}`}
+        className={`${bold ? 'font-bold' : ''} ${italic ? 'italic' : ''} ${
+          strikethrough ? 'line-through' : ''
+        } ${underline ? 'underline' : ''} ${
+          code
+            ? 'font-mono bg-rich-code_background text-rich-code pl-1 pr-1 rounded-sm'
+            : ''
+        } ${colors[color]}`}
         key={divided_text.length - 1}>
         {divided_text[divided_text.length - 1]}
       </span>

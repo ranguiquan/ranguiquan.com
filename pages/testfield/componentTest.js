@@ -1,7 +1,6 @@
+import Paragraph from '../../components/Notion/Blocks/Paragraph';
 import RichText from '../../components/Notion/Common/RichText';
 import { getPageChildrenBlocks } from '../../lib/notion/page';
-
-const mock = [];
 
 export const getStaticProps = async (ctx) => {
   const pageID = process.env.PAGE_ID;
@@ -16,12 +15,10 @@ export const getStaticProps = async (ctx) => {
 
 const componentTest = ({ data }) => {
   // console.log(data)
-  const texts = data[0].heading_1.rich_text;
+  const { paragraph } = data[0];
   return (
     <div>
-      {texts.map((i, index) => {
-        return <RichText rich_text={i} key={index} />;
-      })}
+      <Paragraph paragraph={paragraph} />
     </div>
   );
 };

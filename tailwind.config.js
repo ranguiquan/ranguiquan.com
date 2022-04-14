@@ -41,6 +41,8 @@ module.exports = {
         'tag-text-pink': '#4c2337',
 
         'rich-default': '#37352f',
+        'rich-code': '#eb5757',
+        'rich-code_background': '#ededeb',
         'rich-gray': '#787774',
         'rich-brown': '#9f6b53',
         'rich-orange': '#d9730d',
