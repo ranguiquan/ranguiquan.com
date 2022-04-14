@@ -1,5 +1,5 @@
-import { notion } from '../lib/notion/client';
-import { getPage, getPageChildrenBlocks, getPageList } from '../lib/notion/page';
+import { notion } from '../../lib/notion/client';
+import { getPage, getPageChildrenBlocks, getPageList } from '../../lib/notion/page';
 
 export async function getStaticProps() {
   const databaseID = process.env.DATABASE_ID;

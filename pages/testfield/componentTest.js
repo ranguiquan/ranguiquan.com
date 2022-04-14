@@ -1,4 +1,4 @@
-import RichText from "../components/Notion/Common/RichText";
+import RichText from "../../components/Notion/Common/RichText";
 
 const mock = [
   {
