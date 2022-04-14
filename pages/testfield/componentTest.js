@@ -1,27 +1,29 @@
-import RichText from "../../components/Notion/Common/RichText";
+import RichText from '../../components/Notion/Common/RichText';
+import { getPageChildrenBlocks } from '../../lib/notion/page';
 
-const mock = [
-  {
-    type: 'text',
-    text: {
-      content: 'ffff',
-      link: null,
-    },
-    annotations: {
-      bold: false,
-      italic: false,
-      strikethrough: false,
-      underline: false,
-      code: false,
-      color: 'default',
-    },
-    plain_text: 'ffff',
-    href: null,
-  },
-];
+const mock = [];
 
-const componentTest = () => {
-  return <RichText rich_text={mock[0]}/>;
+export const getStaticProps = async (ctx) => {
+  const pageID = process.env.PAGE_ID;
+  const data = await getPageChildrenBlocks(pageID);
+
+  return {
+    props: {
+      data,
+    },
+  };
+};
+
+const componentTest = ({ data }) => {
+  // console.log(data)
+  const texts = data[0].heading_1.rich_text;
+  return (
+    <div>
+      {texts.map((i, index) => {
+        return <RichText rich_text={i} key={index} />;
+      })}
+    </div>
+  );
 };
 
 export default componentTest;
