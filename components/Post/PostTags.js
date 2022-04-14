@@ -9,6 +9,8 @@ export function PostTags({ tags }) {
   );
 }
 
+// This is an efficient way of dynamic class. 
+// From https://github.com/tailwindlabs/tailwindcss/discussions/3461
 const colors = {
   default: {
     bg: 'bg-tag-default',

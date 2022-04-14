@@ -19,7 +19,7 @@ module.exports = {
         'tag-default': '#e9e8e7',
         'tag-gray': '#e3e2e0',
         'tag-brown': '#eee0da',
-        'tag-red': 'f#fe2dd',
+        'tag-red': '#ffe2dd',
         'tag-orange': '#fadec9',
         'tag-yellow': '#fdecc8',
         'tag-green': '#dbeddb',
