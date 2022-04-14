@@ -1,31 +1,14 @@
 import { PostHead } from '../../components/Post';
-import { getPage } from '../../lib/notion/page';
+import { getPage, getPageList } from '../../lib/notion';
 import { notion } from '../../lib/notion/client';
+import { getPageChildrenBlocks } from '../../lib/notion/page';
 
 export async function getStaticPaths() {
   const databaseID = process.env.DATABASE_ID;
-  const data = await notion.databases.query({
-    database_id: databaseID,
-    filter: {
-      and: [
-        {
-          property: 'Published',
-          checkbox: {
-            equals: true,
-          },
-        },
-      ],
-    },
-    sorts: [
-      {
-        property: 'Created',
-        direction: 'descending',
-      },
-    ],
-  });
+  const page = await getPageList(databaseID);
 
   return {
-    paths: data.results.map((i) => {
+    paths: page.map((i) => {
       return {
         params: {
           slug: i.id,
@@ -40,18 +23,27 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params;
   const pageID = slug;
-  const data = await getPage(pageID);
-  console.log(data);
+  const page = await getPage(pageID);
+
+  const pageBlock = await notion.blocks.retrieve({
+    block_id: pageID,
+  });
+
+  const childrenBlocks = await getPageChildrenBlocks(pageID);
+
   return {
-    props: { data }, // will be passed to the page component as props
+    props: { page, pageBlock, childrenBlocks }, // will be passed to the page component as props
   };
 }
 
-const Post = ({ data }) => {
+const Post = ({ page, pageBlock, childrenBlocks }) => {
   return (
     <div>
-      <PostHead {...data} />
-      <pre className=' overflow-auto'>{JSON.stringify(data, null, 2)}</pre>
+      <PostHead {...page} />
+      <pre>{JSON.stringify(childrenBlocks.length, null, 2)}</pre>
+      <pre className=' overflow-auto'>
+        {JSON.stringify(childrenBlocks, null, 2)}
+      </pre>
     </div>
   );
 };

@@ -11,7 +11,7 @@ export async function getStaticProps() {
 
 export default function Home({ data }) {
   return (
-    <div className='grid gap-2 grid-cols-1 md:grid-cols-2 grid-flow-row-dense'>
+    <div className='grid gap-4 grid-cols-1 md:grid-cols-2 grid-flow-row-dense'>
       {data.map((post) => (
         <PostCard key={post.id} post={post}></PostCard>
       ))}
