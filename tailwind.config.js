@@ -43,6 +43,7 @@ module.exports = {
         'rich-default': '#37352f',
         'rich-code': '#eb5757',
         'rich-code_background': '#ededeb',
+        'rich-underline': '#babab7',
         'rich-gray': '#787774',
         'rich-brown': '#9f6b53',
         'rich-orange': '#d9730d',

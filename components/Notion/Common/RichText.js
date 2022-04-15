@@ -20,67 +20,81 @@ export const colors = {
   red_background: 'bg-rich-red_background',
 };
 
+// to format '\n' in plain_text to <br />
+const plain_text_formatter = (plain_text) => {
+  const divided_text = plain_text.split('\n');
+  const res = [];
+  divided_text.slice(0, divided_text.length - 1).forEach((item, index) => {
+    res.push(...[item, <br key={index} />]);
+  });
+  res.push(divided_text[divided_text.length - 1]);
+  res.filter((item) => item !== '');
+  return res;
+};
+
 const RichText = ({ rich_text }) => {
   const { plain_text, href, annotations, type } = rich_text;
   const { bold, italic, strikethrough, underline, code, color } = annotations;
   if (type !== 'text') {
     return <span className=' text-red-600'> !!!unsupported!!! </span>;
   }
-  // TODO: It's not enough, use semantic label, fool.
-  // This is for '\n' to wrap properly.
-  const divided_text = plain_text.split('\n');
-  const res = divided_text.slice(0, divided_text.length - 1).map((i, index) => {
-    // if (i === '') return;
-    return (
-      <>
-        <span
-          className={`${bold ? 'font-bold' : ''} ${italic ? 'italic' : ''} ${
-            strikethrough ? 'line-through' : ''
-          } ${underline ? 'underline' : ''} ${
-            code ? 'font-mono bg-rich-code_background text-rich-code' : ''
-          } ${colors[color]}`}
-          key={index}>
-          {i}
-        </span>
-        <br />
-      </>
+  const formatted_text = plain_text_formatter(plain_text);
+  let decorated_text = formatted_text;
+  // start decorating...
+  if (bold) {
+    decorated_text = (
+      <strong
+        className={`font-bold ${italic ? 'italic' : ''} ${
+          strikethrough ? 'line-through' : ''
+        } ${underline ? 'underline' : ''} ${colors[color]} ${
+          code ? 'pl-2 pr-2 rounded-sm' : ''
+        }`}>
+        {decorated_text}
+      </strong>
     );
-  });
-  if (href) {
-    return (
-      <a href={href} className='underline hover:no-underline'>
-        {res}
-        <span
-          className={`${bold ? 'font-bold' : ''} ${italic ? 'italic' : ''} ${
-            strikethrough ? 'line-through' : ''
-          } ${underline ? 'underline' : ''} ${
-            code
-              ? 'font-mono bg-rich-code_background text-rich-code pl-1 pr-1 rounded-sm'
-              : ''
-          } ${colors[color]}`}
-          key={divided_text.length - 1}>
-          {divided_text[divided_text.length - 1]}
-        </span>
-      </a>
+  } else if (italic) {
+    decorated_text = (
+      <em
+        className={`italic ${strikethrough ? 'line-through' : ''} ${
+          underline ? 'underline' : ''
+        } ${colors[color]} ${code ? 'pl-2 pr-2 rounded-sm' : ''}`}>
+        {decorated_text}
+      </em>
     );
+  } else if (strikethrough) {
+    decorated_text = (
+      <del
+        className={`line-through ${underline ? 'underline' : ''} ${
+          colors[color]
+        } ${code ? 'pl-2 pr-2 rounded-sm' : ''}`}>
+        {decorated_text}
+      </del>
+    );
+  } else {
+    decorated_text = (
+      <span
+        className={`${underline ? 'underline' : ''} ${colors[color]} ${
+          code ? 'pl-2 pr-2 rounded-sm' : ''
+        }`}>
+        {decorated_text}
+      </span>
+    );
+
+    // code $ href
+    if (code) {
+      decorated_text = (
+        <code className={`bg-rich-code_background text-rich-code rounded-sm  font-mono`}>
+          {decorated_text}
+        </code>
+      );
+    }
+    if (href) {
+      decorated_text = <a href={href} className={`underline text-rich-underline`}>{decorated_text}</a>
+    }
   }
 
-  return (
-    <>
-      {res}
-      <span
-        className={`${bold ? 'font-bold' : ''} ${italic ? 'italic' : ''} ${
-          strikethrough ? 'line-through' : ''
-        } ${underline ? 'underline' : ''} ${
-          code
-            ? 'font-mono bg-rich-code_background text-rich-code pl-1 pr-1 rounded-sm'
-            : ''
-        } ${colors[color]}`}
-        key={divided_text.length - 1}>
-        {divided_text[divided_text.length - 1]}
-      </span>
-    </>
-  );
+  return <>{decorated_text}</>;
+
 };
 
 export default RichText;
