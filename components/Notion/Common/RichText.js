@@ -47,7 +47,7 @@ const RichText = ({ rich_text }) => {
         className={`font-bold ${italic ? 'italic' : ''} ${
           strikethrough ? 'line-through' : ''
         } ${underline ? 'underline' : ''} ${color !== 'default' && colors[color]} ${
-          code ? 'pl-2 pr-2 rounded-sm' : ''
+          code ? 'pl-2 pr-2' : ''
         }`}>
         {decorated_text}
       </strong>
@@ -58,7 +58,7 @@ const RichText = ({ rich_text }) => {
         className={`italic ${strikethrough ? 'line-through' : ''} ${
           underline ? 'underline' : ''
         } ${color !== 'default' && colors[color]} ${
-          code ? 'pl-2 pr-2 rounded-sm' : ''
+          code ? 'pl-2 pr-2' : ''
         }`}>
         {decorated_text}
       </em>
@@ -68,7 +68,7 @@ const RichText = ({ rich_text }) => {
       <del
         className={`line-through ${underline ? 'underline' : ''} ${
           color !== 'default' && colors[color]
-        } ${code ? 'pl-2 pr-2 rounded-sm' : ''}`}>
+        } ${code ? 'pl-2 pr-2' : ''}`}>
         {decorated_text}
       </del>
     );
@@ -77,7 +77,7 @@ const RichText = ({ rich_text }) => {
       <span
         className={`${underline ? 'underline' : ''} ${
           color !== 'default' && colors[color]
-        } ${code ? 'pl-2 pr-2 rounded-sm' : ''}`}>
+        } ${code ? 'pl-2 pr-2' : ''}`}>
         {decorated_text}
       </span>
     );
@@ -85,13 +85,13 @@ const RichText = ({ rich_text }) => {
     // code $ href
     if (code) {
       decorated_text = (
-        <code className={`bg-rich-code_background text-rich-code rounded-sm  font-mono`}>
+        <code className={`bg-rich-code_background text-rich-code rounded-md overflow-hidden font-mono`}>
           {decorated_text}
         </code>
       );
     }
     if (href) {
-      decorated_text = <a href={href} className={`underline text-rich-underline`}>{decorated_text}</a>
+      decorated_text = <a href={href} className={`underline hover:no-underline text-rich-underline`}>{decorated_text}</a>
     }
   }
 

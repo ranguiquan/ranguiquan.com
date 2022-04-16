@@ -1,15 +1,10 @@
 import React from 'react';
-import Image from 'next/image';
+import PostCoverImage from '../Common/PostCoverImage';
 
 export function PostCover({ cover }) {
   return (
-    <div className='w-full h-[150px] relative hidden md:block'>
-      <Image
-        src={cover}
-        alt='cover'
-        layout='fill'
-        className='object-cover rounded-3xl'
-      />
+    <div className='w-full h-[150px] relative rounded-3xl overflow-hidden md:block'>
+      <PostCoverImage cover={cover} />
     </div>
   );
 }
