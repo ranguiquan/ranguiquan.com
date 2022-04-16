@@ -18,6 +18,7 @@ const PostCoverImage = ({ cover }) => {
           alt='cover'
           layout='fill'
           className='object-cover '
+          priority
         />
       )}
       {!isSupported && <div className='p-4 text-rich-red'>Unsupported cover image, please contact Admin.</div>}
