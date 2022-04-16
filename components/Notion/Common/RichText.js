@@ -91,7 +91,7 @@ const RichText = ({ rich_text }) => {
       );
     }
     if (href) {
-      decorated_text = <a href={href} className={`underline hover:no-underline text-rich-underline`}>{decorated_text}</a>
+      decorated_text = <a href={href} className={`inline underline hover:no-underline text-rich-underline`}>{decorated_text}</a>
     }
   }
 
