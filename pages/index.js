@@ -6,6 +6,7 @@ export async function getStaticProps() {
   const data = await getPageList(databaseID);
   return {
     props: { data }, // will be passed to the page component as props
+    revalidate: 60,
   };
 }
 

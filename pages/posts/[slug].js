@@ -1,5 +1,6 @@
 import { PostHead } from '../../components/Post';
 import { getPage, getPageList } from '../../lib/notion';
+import { blockMapper } from '../../lib/notion/blockMapper';
 import { notion } from '../../lib/notion/client';
 import { getPageChildrenBlocks } from '../../lib/notion/page';
 
@@ -33,19 +34,16 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { page, pageBlock, childrenBlocks }, // will be passed to the page component as props
+    revalidate: 60,
   };
 }
 
-const Post = ({ page, pageBlock, childrenBlocks }) => {
+function post({ page, pageBlock, childrenBlocks }) {
   return (
     <div>
       <PostHead {...page} />
-      <pre>{JSON.stringify(childrenBlocks.length, null, 2)}</pre>
-      <pre className=' overflow-auto'>
-        {JSON.stringify(childrenBlocks, null, 2)}
-      </pre>
+      {childrenBlocks?.map((block) => blockMapper(block))}
     </div>
   );
-};
-
-export default Post;
+}
+export default post;

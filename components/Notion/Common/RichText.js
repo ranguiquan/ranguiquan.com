@@ -46,7 +46,7 @@ const RichText = ({ rich_text }) => {
       <strong
         className={`font-bold ${italic ? 'italic' : ''} ${
           strikethrough ? 'line-through' : ''
-        } ${underline ? 'underline' : ''} ${colors[color]} ${
+        } ${underline ? 'underline' : ''} ${color !== 'default' && colors[color]} ${
           code ? 'pl-2 pr-2 rounded-sm' : ''
         }`}>
         {decorated_text}
@@ -57,7 +57,9 @@ const RichText = ({ rich_text }) => {
       <em
         className={`italic ${strikethrough ? 'line-through' : ''} ${
           underline ? 'underline' : ''
-        } ${colors[color]} ${code ? 'pl-2 pr-2 rounded-sm' : ''}`}>
+        } ${color !== 'default' && colors[color]} ${
+          code ? 'pl-2 pr-2 rounded-sm' : ''
+        }`}>
         {decorated_text}
       </em>
     );
@@ -65,7 +67,7 @@ const RichText = ({ rich_text }) => {
     decorated_text = (
       <del
         className={`line-through ${underline ? 'underline' : ''} ${
-          colors[color]
+          color !== 'default' && colors[color]
         } ${code ? 'pl-2 pr-2 rounded-sm' : ''}`}>
         {decorated_text}
       </del>
@@ -73,9 +75,9 @@ const RichText = ({ rich_text }) => {
   } else {
     decorated_text = (
       <span
-        className={`${underline ? 'underline' : ''} ${colors[color]} ${
-          code ? 'pl-2 pr-2 rounded-sm' : ''
-        }`}>
+        className={`${underline ? 'underline' : ''} ${
+          color !== 'default' && colors[color]
+        } ${code ? 'pl-2 pr-2 rounded-sm' : ''}`}>
         {decorated_text}
       </span>
     );
