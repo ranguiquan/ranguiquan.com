@@ -1,8 +1,10 @@
 import { PostHead } from '../../components/Post';
-import { getPage, getPageList } from '../../lib/notion';
 import { blockMapper } from '../../lib/notion/blockMapper';
-import { notion } from '../../lib/notion/client';
-import { getPageChildrenBlocks } from '../../lib/notion/page';
+import {
+  getPageContent,
+  getPageList,
+  getPageMeta,
+} from '../../lib/notion/page';
 
 export async function getStaticPaths() {
   const databaseID = process.env.DATABASE_ID;
@@ -24,25 +26,20 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params;
   const pageID = slug;
-  const page = await getPage(pageID);
-
-  const pageBlock = await notion.blocks.retrieve({
-    block_id: pageID,
-  });
-
-  const childrenBlocks = await getPageChildrenBlocks(pageID);
+  const pageMeta = await getPageMeta(pageID);
+  const pageContent = await getPageContent(pageID);
 
   return {
-    props: { page, pageBlock, childrenBlocks }, // will be passed to the page component as props
+    props: { pageMeta, pageContent }, // will be passed to the page component as props
     revalidate: 60,
   };
 }
 
-function post({ page, pageBlock, childrenBlocks }) {
+function post({ pageMeta, pageContent }) {
   return (
     <div>
-      <PostHead {...page} />
-      {childrenBlocks?.map((block) => blockMapper(block))}
+      <PostHead {...pageMeta} />
+      {pageContent?.map((block) => blockMapper(block))}
     </div>
   );
 }

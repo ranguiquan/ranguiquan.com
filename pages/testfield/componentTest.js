@@ -1,20 +1,11 @@
-import Paragraph from '../../components/Notion/Blocks/Paragraph';
-import RichText from '../../components/Notion/Common/RichText';
 import { retrieve_nested_children } from '../../lib/notion/block';
-import { blockMap, blockMapper } from '../../lib/notion/blockMapper';
-import { getPageChildrenBlocks, getPageList } from '../../lib/notion/page';
+import { getPageContent } from '../../lib/notion/page';
 import { mock, mock_bullet } from '../../mock/mock';
 
 export const getStaticProps = async (ctx) => {
   const pageID = process.env.PAGE_ID;
   const dataBaseID = process.env.DATABASE_ID;
-  const data = await getPageChildrenBlocks(pageID);
-  await (async () => {
-    for (let i = 0; i < data.length; i++) {
-      await retrieve_nested_children(data[i]);
-    }
-  })();
-
+  const data = await getPageContent(pageID);
   // const data = await getPageList(dataBaseID);
 
   return {
@@ -35,7 +26,7 @@ const componentTest = ({ data }) => {
   //     })}
   //   </>
   // );
-
+// 1e2af91c-d91a-4ec7-90d1-895b332f2af4
   return (
     <>
       <pre>{JSON.stringify(data, null, 2)}</pre>
