@@ -795,253 +795,12 @@ export const mock = [
 ];
 
 export const mock_bullet = 
-
 [
   {
     "object": "block",
     "id": "d4ed7f69-6d14-4a15-857b-e3da0e84e096",
     "created_time": "2022-04-14T13:25:00.000Z",
-    "last_edited_time": "2022-04-16T02:00:00.000Z",
-    "created_by": {
-      "object": "user",
-      "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
-    },
-    "last_edited_by": {
-      "object": "user",
-      "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
-    },
-    "has_children": true,
-    "archived": false,
-    "type": "bulleted_list_item",
-    "bulleted_list_item": {
-      "rich_text": [
-        {
-          "type": "text",
-          "text": {
-            "content": "first",
-            "link": null
-          },
-          "annotations": {
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          },
-          "plain_text": "first",
-          "href": null
-        }
-      ],
-      "color": "default"
-    },
-    "children": [
-      {
-        "object": "block",
-        "id": "ad7e8ab6-84e4-4584-86f0-250d5f103016",
-        "created_time": "2022-04-16T01:59:00.000Z",
-        "last_edited_time": "2022-04-16T02:00:00.000Z",
-        "created_by": {
-          "object": "user",
-          "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
-        },
-        "last_edited_by": {
-          "object": "user",
-          "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
-        },
-        "has_children": true,
-        "archived": false,
-        "type": "bulleted_list_item",
-        "bulleted_list_item": {
-          "rich_text": [
-            {
-              "type": "text",
-              "text": {
-                "content": "second",
-                "link": null
-              },
-              "annotations": {
-                "bold": false,
-                "italic": false,
-                "strikethrough": false,
-                "underline": false,
-                "code": false,
-                "color": "default"
-              },
-              "plain_text": "second",
-              "href": null
-            }
-          ],
-          "color": "default"
-        },
-        "children": [
-          {
-            "object": "block",
-            "id": "bb8391c0-a5e5-4b48-8880-78d8d5dbe4d2",
-            "created_time": "2022-04-16T01:59:00.000Z",
-            "last_edited_time": "2022-04-16T02:00:00.000Z",
-            "created_by": {
-              "object": "user",
-              "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
-            },
-            "last_edited_by": {
-              "object": "user",
-              "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
-            },
-            "has_children": true,
-            "archived": false,
-            "type": "bulleted_list_item",
-            "bulleted_list_item": {
-              "rich_text": [
-                {
-                  "type": "text",
-                  "text": {
-                    "content": "third",
-                    "link": null
-                  },
-                  "annotations": {
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "code": false,
-                    "color": "default"
-                  },
-                  "plain_text": "third",
-                  "href": null
-                }
-              ],
-              "color": "default"
-            },
-            "children": [
-              {
-                "object": "block",
-                "id": "40b59181-7c27-4e42-891f-dfe50b486c03",
-                "created_time": "2022-04-16T01:59:00.000Z",
-                "last_edited_time": "2022-04-16T02:00:00.000Z",
-                "created_by": {
-                  "object": "user",
-                  "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
-                },
-                "last_edited_by": {
-                  "object": "user",
-                  "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
-                },
-                "has_children": false,
-                "archived": false,
-                "type": "paragraph",
-                "paragraph": {
-                  "rich_text": [
-                    {
-                      "type": "text",
-                      "text": {
-                        "content": "third company",
-                        "link": null
-                      },
-                      "annotations": {
-                        "bold": false,
-                        "italic": false,
-                        "strikethrough": false,
-                        "underline": false,
-                        "code": false,
-                        "color": "default"
-                      },
-                      "plain_text": "third company",
-                      "href": null
-                    }
-                  ],
-                  "color": "default"
-                }
-              }
-            ]
-          },
-          {
-            "object": "block",
-            "id": "46bb5f4b-dcb6-49ac-8c37-ec080227921c",
-            "created_time": "2022-04-16T02:00:00.000Z",
-            "last_edited_time": "2022-04-16T02:00:00.000Z",
-            "created_by": {
-              "object": "user",
-              "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
-            },
-            "last_edited_by": {
-              "object": "user",
-              "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
-            },
-            "has_children": false,
-            "archived": false,
-            "type": "paragraph",
-            "paragraph": {
-              "rich_text": [
-                {
-                  "type": "text",
-                  "text": {
-                    "content": "second company",
-                    "link": null
-                  },
-                  "annotations": {
-                    "bold": false,
-                    "italic": false,
-                    "strikethrough": false,
-                    "underline": false,
-                    "code": false,
-                    "color": "default"
-                  },
-                  "plain_text": "second company",
-                  "href": null
-                }
-              ],
-              "color": "default"
-            }
-          }
-        ]
-      },
-      {
-        "object": "block",
-        "id": "a39d474a-db78-4cf9-ab9d-f30880dbaf42",
-        "created_time": "2022-04-16T02:00:00.000Z",
-        "last_edited_time": "2022-04-16T02:00:00.000Z",
-        "created_by": {
-          "object": "user",
-          "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
-        },
-        "last_edited_by": {
-          "object": "user",
-          "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
-        },
-        "has_children": false,
-        "archived": false,
-        "type": "paragraph",
-        "paragraph": {
-          "rich_text": [
-            {
-              "type": "text",
-              "text": {
-                "content": "first company",
-                "link": null
-              },
-              "annotations": {
-                "bold": false,
-                "italic": false,
-                "strikethrough": false,
-                "underline": false,
-                "code": false,
-                "color": "default"
-              },
-              "plain_text": "first company",
-              "href": null
-            }
-          ],
-          "color": "default"
-        }
-      }
-    ]
-  },
-  {
-    "object": "block",
-    "id": "dba83604-2fbf-4b05-85ae-8e605d28ef56",
-    "created_time": "2022-04-16T02:00:00.000Z",
-    "last_edited_time": "2022-04-16T02:00:00.000Z",
+    "last_edited_time": "2022-04-18T09:00:00.000Z",
     "created_by": {
       "object": "user",
       "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
@@ -1058,7 +817,102 @@ export const mock_bullet =
         {
           "type": "text",
           "text": {
-            "content": "out of bullet",
+            "content": "Rate-limited requests will return a ",
+            "link": {
+              "url": "https://developers.notion.com/reference/request-limits"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Rate-limited requests will return a ",
+          "href": "https://developers.notion.com/reference/request-limits"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "\"rate_limited\"",
+            "link": {
+              "url": "https://developers.notion.com/reference/request-limits"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": true,
+            "color": "default"
+          },
+          "plain_text": "\"rate_limited\"",
+          "href": "https://developers.notion.com/reference/request-limits"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " error code (HTTP response status 429). ",
+            "link": {
+              "url": "https://developers.notion.com/reference/request-limits"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " error code (HTTP response status 429). ",
+          "href": "https://developers.notion.com/reference/request-limits"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "The rate limit for incoming requests is an average of 3 requests per second.",
+            "link": {
+              "url": "https://developers.notion.com/reference/request-limits"
+            }
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "The rate limit for incoming requests is an average of 3 requests per second.",
+          "href": "https://developers.notion.com/reference/request-limits"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Some bursts beyond the average rate are allowed.",
+            "link": {
+              "url": "https://developers.notion.com/reference/request-limits"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Some bursts beyond the average rate are allowed.",
+          "href": "https://developers.notion.com/reference/request-limits"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " ",
             "link": null
           },
           "annotations": {
@@ -1069,13 +923,35 @@ export const mock_bullet =
             "code": false,
             "color": "default"
           },
-          "plain_text": "out of bullet",
+          "plain_text": " ",
           "href": null
         }
       ],
       "color": "default"
     }
+  },
+  {
+    "object": "block",
+    "id": "ab157123-25da-4e38-a6a9-42682871ab92",
+    "created_time": "2022-04-18T09:00:00.000Z",
+    "last_edited_time": "2022-04-18T09:00:00.000Z",
+    "created_by": {
+      "object": "user",
+      "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
+    },
+    "last_edited_by": {
+      "object": "user",
+      "id": "bee3a462-44be-405b-b2cb-994920ea1d89"
+    },
+    "has_children": false,
+    "archived": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "color": "default"
+    }
   }
 ]
+
 
 
