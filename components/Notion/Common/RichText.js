@@ -32,7 +32,7 @@ const plain_text_formatter = (plain_text) => {
   return res;
 };
 
-const RichText = ({ rich_text }) => {
+export const RichText = ({ rich_text }) => {
   const { plain_text, href, annotations, type } = rich_text;
   const { bold, italic, strikethrough, underline, code, color } = annotations;
   if (type !== 'text') {
@@ -105,4 +105,3 @@ const RichText = ({ rich_text }) => {
   return <>{decorated_text}</>;
 };
 
-export default RichText;

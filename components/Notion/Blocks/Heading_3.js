@@ -1,6 +1,6 @@
-import RichText, { colors } from '../Common/RichText';
+import { RichText, colors } from '../Common/RichText';
 
-const Heading_3 = ({ heading_3 }) => {
+export const Heading_3 = ({ heading_3 }) => {
   const { rich_text, color } = heading_3;
   return (
     <h3 className={`${colors[color]} text-xl mt-4 mb-4 font-bold`}>
@@ -10,5 +10,3 @@ const Heading_3 = ({ heading_3 }) => {
     </h3>
   );
 };
-
-export default Heading_3;
