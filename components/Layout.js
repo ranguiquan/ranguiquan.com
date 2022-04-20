@@ -5,9 +5,11 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main className=' flex justify-center'>
-        <div className=' w-full lg:w-[1024px] p-2 pt-0 overflow-hidden'>{children}</div>
-      </main>
+      <div className=' flex justify-center'>
+        <div className=' w-full md:w-[768px] p-4 pt-0 overflow-hidden'>
+          {children}
+        </div>
+      </div>
       <Footer />
     </>
   );
