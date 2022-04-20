@@ -1,16 +1,16 @@
 import { blockMapper } from '../../../lib/notion/blockMapper';
 import { RichText, colors } from '../Common/RichText';
 
-const icon_layers = ['🌕', '🌖', '🌗', '🌘', '🌚'];
+const bullet_icons = ['🌕', '🌖', '🌗', '🌘', '🌚'];
 
 export const Bulleted_list_item = ({ bulleted_list_item, children, layer }) => {
   const { rich_text, color } = bulleted_list_item;
   if (!layer) layer = 0;
   return (
     <div
-      className={`grid grid-cols-[auto_1fr] grid-flow-row ${colors[color]} align-top mt-2 `}>
+      className={`grid grid-cols-[minmax(2em,auto)_1fr] grid-flow-row ${colors[color]} align-top mt-2 `}>
       <div className=' self-baseline mr-2 text-xs'>
-        {icon_layers[layer % icon_layers.length]}
+        {bullet_icons[layer % bullet_icons.length]}
       </div>
       <div className=' self-baseline '>
         {rich_text.map((i, index) => (
