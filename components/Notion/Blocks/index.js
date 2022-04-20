@@ -1,3 +1,5 @@
+export { Code } from './Code';
+
 export { Heading_1 } from './Heading_1';
 export { Heading_2 } from './Heading_2';
 export { Heading_3 } from './Heading_3';

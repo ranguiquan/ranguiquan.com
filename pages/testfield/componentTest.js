@@ -3,8 +3,15 @@ import { retrieve_nested_children } from '../../lib/notion/block';
 import { blockMapper } from '../../lib/notion/blockMapper';
 import { getPageContent } from '../../lib/notion/page';
 import { mock, mock_bullet } from '../../mock/mock';
-// import hljs from 'highlight.js';
-import hljs from 'highlight.js/lib/common';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+
+// import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+// Just use 'cjs' rather than 'esm', I don't know why.
+// https://github.com/react-syntax-highlighter/react-syntax-highlighter/issues/230#issuecomment-568377353
+import {
+  docco,
+  googlecode,
+} from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 export const getStaticProps = async (ctx) => {
   const pageID = '4ea94761d97045818849a52bbb030d97';
@@ -33,12 +40,15 @@ const componentTest = ({ data }) => {
   // );
   console.log(data[0].code.rich_text[0].plain_text);
   return (
-    <pre
-      dangerouslySetInnerHTML={{
-        __html: hljs.highlight(data[0].code.rich_text[0].plain_text, {
-          language: 'javascript',
-        }).value,
-      }}></pre>
+    // <pre
+    //   dangerouslySetInnerHTML={{
+    //     __html: hljs.highlight(data[0].code.rich_text[0].plain_text, {
+    //       language: 'javascript',
+    //     }).value,
+    //   }}></pre>
+    <SyntaxHighlighter language='javascript' style={docco}>
+      {data[0].code.rich_text[0].plain_text}
+    </SyntaxHighlighter>
   );
 };
 
