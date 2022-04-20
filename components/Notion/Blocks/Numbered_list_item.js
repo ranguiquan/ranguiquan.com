@@ -52,8 +52,8 @@ export const Numbered_list_item = ({
   if (!layer) layer = 0;
   return (
     <div
-      className={` grid grid-cols-[minmax(2em,auto)_1fr] grid-flow-row ${colors[color]} align-top mt-2 `}>
-      <div className=' self-baseline mr-2'>
+      className={` grid grid-cols-[minmax(2em,auto)_1fr] grid-flow-row  ${colors.default} ${colors[color]} align-top mt-2 `}>
+      <div className='self-baseline mr-2'>
         {numberHandlers[layer % numberHandlers.length](number)}.
       </div>
       <div className=' self-baseline '>
