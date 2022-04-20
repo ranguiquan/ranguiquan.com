@@ -39,19 +39,22 @@ function post({ pageMeta, pageContent }) {
   return (
     <div>
       <PostHead {...pageMeta} />
-      {pageContent?.map((block, index) => {
-
-        if (block.type === 'numbered_list_item') {
-          if (index === 0 || pageContent[index - 1].type !== 'numbered_list_item') {
-            block.number = 1;
-          } else {
-            block.number = pageContent[index - 1].number + 1;
+      <main>
+        {pageContent?.map((block, index) => {
+          if (block.type === 'numbered_list_item') {
+            if (
+              index === 0 ||
+              pageContent[index - 1].type !== 'numbered_list_item'
+            ) {
+              block.number = 1;
+            } else {
+              block.number = pageContent[index - 1].number + 1;
+            }
           }
-        }
 
-
-        return blockMapper(block);
-      })}
+          return blockMapper(block);
+        })}
+      </main>
     </div>
   );
 }

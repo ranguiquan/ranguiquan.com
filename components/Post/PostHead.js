@@ -15,7 +15,7 @@ export const PostHead = ({
 }) => {
   const date = new Date(created_time);
   return (
-    <div className='w-full space-y-2 border-b-gray-500 border-b-2 pb-4'>
+    <div className='w-full space-y-2 border-b-2 pb-4 border-b-rich-gray_background'>
       {cover && <PostCover cover={cover} />}
       <PostTitle icon={icon} name={name} />
       <PostAuthor author={author} date={date}/>
