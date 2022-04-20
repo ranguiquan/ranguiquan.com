@@ -16,9 +16,9 @@ import {
 export const getStaticProps = async (ctx) => {
   const pageID = '4ea94761d97045818849a52bbb030d97';
   const dataBaseID = process.env.DATABASE_ID;
-  const data = await getPageContent(pageID);
+  // const data = await getPageContent(pageID);
   // const data = await getPageList(dataBaseID);
-  // const data = mock;
+  const data = mock;
 
   return {
     props: {
@@ -38,18 +38,9 @@ const componentTest = ({ data }) => {
   //     })}
   //   </>
   // );
-  console.log(data[0].code.rich_text[0].plain_text);
-  return (
-    // <pre
-    //   dangerouslySetInnerHTML={{
-    //     __html: hljs.highlight(data[0].code.rich_text[0].plain_text, {
-    //       language: 'javascript',
-    //     }).value,
-    //   }}></pre>
-    <SyntaxHighlighter language='javascript' style={docco}>
-      {data[0].code.rich_text[0].plain_text}
-    </SyntaxHighlighter>
-  );
+  // return <pre>{JSON.stringify(data, null, 2)}</pre>;
+
+  return data.map(block=>blockMapper(block))
 };
 
 export default componentTest;
