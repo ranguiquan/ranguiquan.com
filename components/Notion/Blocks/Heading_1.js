@@ -1,4 +1,5 @@
-import { RichText, colors } from '../Common/RichText';
+import { RichText } from '../Common/RichText';
+import { colors } from '../Common/color';
 
 export const Heading_1 = ({ heading_1 }) => {
   const { rich_text, color } = heading_1;

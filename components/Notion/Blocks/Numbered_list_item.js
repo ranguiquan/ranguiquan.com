@@ -1,5 +1,6 @@
 import { blockMapper } from '../../../lib/notion/blockMapper';
-import { RichText, colors } from '../Common/RichText';
+import { RichText } from '../Common/RichText';
+import { colors } from '../Common/color';
 
 // From stackoverflow: https://stackoverflow.com/questions/9083037/convert-a-number-into-a-roman-numeral-in-javascript
 const numberToRoman = (num) => {

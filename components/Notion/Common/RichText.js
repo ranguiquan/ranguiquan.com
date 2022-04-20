@@ -1,24 +1,4 @@
-export const colors = {
-  default: 'text-rich-default',
-  gray: 'text-rich-gray',
-  brown: 'text-rich-brown',
-  orange: 'text-rich-orange',
-  yellow: 'text-rich-yellow',
-  green: 'text-rich-green',
-  blue: 'text-rich-blue',
-  purple: 'text-rich-purple',
-  pink: 'text-rich-pink',
-  red: 'text-rich-red',
-  gray_background: 'bg-rich-gray_background',
-  brown_background: 'bg-rich-brown_background',
-  orange_background: 'bg-rich-orange_background',
-  yellow_background: 'bg-rich-yellow_background',
-  green_background: 'bg-rich-green_background',
-  blue_background: 'bg-rich-blue_background',
-  purple_background: 'bg-rich-purple_background',
-  pink_background: 'bg-rich-pink_background',
-  red_background: 'bg-rich-red_background',
-};
+import { colors } from "./color";
 
 // to format '\n' in plain_text to <br />
 const plain_text_formatter = (plain_text) => {

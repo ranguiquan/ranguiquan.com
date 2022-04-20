@@ -1,6 +1,6 @@
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { RichText } from '../Common/RichText';
 
+// TODO: optimize the library
 // import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 // Just use 'cjs' rather than 'esm', I don't know why.
 // https://github.com/react-syntax-highlighter/react-syntax-highlighter/issues/230#issuecomment-568377353

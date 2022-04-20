@@ -1,4 +1,5 @@
-import {RichText,  colors } from '../Common/RichText';
+import { RichText } from '../Common/RichText';
+import { colors } from '../Common/color';
 
 export const Paragraph = ({ paragraph }) => {
   // TODO: support children

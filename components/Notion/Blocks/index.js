@@ -1,3 +1,4 @@
+export { Quote } from './Quote';
 export { Callout } from './Callout';
 export { Code } from './Code';
 export { Bulleted_list_item } from './Bulleted_list_item';
