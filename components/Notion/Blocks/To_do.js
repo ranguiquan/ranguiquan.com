@@ -12,7 +12,7 @@ export const To_do = ({ to_do, children }) => {
       } mt-2 w-full`}>
       <div className=' flex-grow-0 flex-shrink-0 flex items-center justify-start w-8 h-6'>
         {checked ? (
-          <MdCheckBox size='1.5em' />
+          <MdCheckBox size='1.5em' color='#2ea1cf' />
         ) : (
           <MdCheckBoxOutlineBlank size='1.5em' />
         )}

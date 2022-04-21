@@ -39,7 +39,7 @@ function post({ pageMeta, pageContent }) {
   return (
     <div>
       <PostHead {...pageMeta} />
-      <main className=' text-rich-default'>
+      <main className=''>
         {pageContent?.map((block, index) => {
           if (block.type === 'numbered_list_item') {
             if (
