@@ -7,9 +7,11 @@ export const Callout = ({ callout, children }) => {
   const { rich_text, icon, color } = callout;
   return (
     <div
-      className={`flex ${colors.default} ${colors[color]}  mt-2 pl-4 pr-4 pt-6 pb-6 rounded overflow-hidden`}>
-      <div className=' self-baseline'>{icon.emoji}</div>
-      <div className='pl-4 self-baseline'>
+      className={`flex justify-start items-start ${colors.default} ${colors[color]}  mt-2 pt-6 pb-6 rounded overflow-hidden`}>
+      <div className=' flex-shrink-0 flex-grow-0 w-16 flex justify-center '>
+        {icon.emoji}
+      </div>
+      <div className='flex-1 whitespace-pre-wrap break-words max-w-full min-w-[1px]'>
         {rich_text.map((i, index) => (
           <RichText rich_text={i} key={index} />
         ))}

@@ -56,7 +56,7 @@ export const Numbered_list_item = ({
       <div className='flex items-center justify-start w-8 h-6'>
         {numberHandlers[layer % numberHandlers.length](number)}.
       </div>
-      <div className=' self-baseline '>
+      <div className='flex-1 whitespace-pre-wrap break-words max-w-full min-w-[1px]'>
         {rich_text.map((i, index) => (
           <RichText rich_text={i} key={index} />
         ))}
