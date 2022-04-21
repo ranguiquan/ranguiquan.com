@@ -38,6 +38,7 @@ const componentTest = ({ data }) => {
       })}
     </>
   );
+  
   // return <pre>{JSON.stringify(data, null, 2)}</pre>;
 
   // return data.map(block=>blockMapper(block))
