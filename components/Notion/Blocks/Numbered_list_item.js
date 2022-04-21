@@ -52,7 +52,9 @@ export const Numbered_list_item = ({
   if (!layer) layer = 0;
   return (
     <div
-      className={`flex ${colors.default} ${colors[color]} items-start mt-2 `}>
+      className={`flex ${
+        color !== 'default' ? colors[color] : 'text-inherited'
+      } items-start mt-2 `}>
       <div className='flex items-center justify-start w-8 h-6'>
         {numberHandlers[layer % numberHandlers.length](number)}.
       </div>

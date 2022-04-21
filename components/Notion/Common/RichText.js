@@ -27,7 +27,7 @@ export const RichText = ({ rich_text }) => {
         className={`font-bold ${italic ? 'italic' : ''} ${
           strikethrough ? 'line-through' : ''
         } ${underline ? 'underline' : ''} ${
-          color !== 'default' ? colors[color] : ''
+          color !== 'default' ? colors[color] : 'text-inherited'
         } ${code ? 'pl-2 pr-2' : ''}`}>
         {decorated_text}
       </strong>
@@ -37,7 +37,7 @@ export const RichText = ({ rich_text }) => {
       <em
         className={`italic ${strikethrough ? 'line-through' : ''} ${
           underline ? 'underline' : ''
-        } ${color !== 'default' ? colors[color] : ''} ${
+        } ${color !== 'default' ? colors[color] : 'text-inherited'} ${
           code ? 'pl-2 pr-2' : ''
         }`}>
         {decorated_text}
@@ -47,7 +47,7 @@ export const RichText = ({ rich_text }) => {
     decorated_text = (
       <del
         className={`line-through ${underline ? 'underline' : ''} ${
-          color !== 'default' ? colors[color] : ''
+          color !== 'default' ? colors[color] : 'text-inherited'
         } ${code ? 'pl-2 pr-2' : ''}`}>
         {decorated_text}
       </del>
@@ -56,7 +56,7 @@ export const RichText = ({ rich_text }) => {
     decorated_text = (
       <span
         className={`${underline ? 'underline' : ''} ${
-          color !== 'default' ? colors[color] : ''
+          color !== 'default' ? colors[color] : 'text-inherited'
         } ${code ? 'pl-2 pr-2' : ''}`}>
         {decorated_text}
       </span>

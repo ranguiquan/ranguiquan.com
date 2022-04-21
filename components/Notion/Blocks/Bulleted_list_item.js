@@ -9,7 +9,9 @@ export const Bulleted_list_item = ({ bulleted_list_item, children, layer }) => {
   if (!layer) layer = 0;
   return (
     <div
-      className={`flex ${colors.default} ${colors[color]} items-start mt-2 `}>
+      className={`flex ${
+        color !== 'default' ? colors[color] : 'text-inherited'
+      } items-start mt-2 `}>
       <div className='flex items-center justify-start text-xs w-8 h-6'>
         <div className=''>{bullet_icons[layer % bullet_icons.length]}</div>
       </div>
