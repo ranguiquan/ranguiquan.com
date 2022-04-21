@@ -1,5 +1,5 @@
+export { Notion_Image } from './Notion_Image';
 export { To_do } from './To_do';
-
 export { Quote } from './Quote';
 export { Callout } from './Callout';
 export { Code } from './Code';

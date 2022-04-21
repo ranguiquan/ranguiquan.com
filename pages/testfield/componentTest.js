@@ -31,16 +31,16 @@ const componentTest = ({ data }) => {
   // const data = mock;
   // const data = mock_bullet
 
-  // return (
-  //   <>
-  //     {data.map((item) => {
-  //       return blockMapper(item);
-  //     })}
-  //   </>
-  // );
+  return (
+    <>
+      {data.map((item) => {
+        return blockMapper(item);
+      })}
+    </>
+  );
   // return <pre>{JSON.stringify(data, null, 2)}</pre>;
 
-  return data.map(block=>blockMapper(block))
+  // return data.map(block=>blockMapper(block))
 };
 
 export default componentTest;
