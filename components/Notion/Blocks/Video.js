@@ -2,6 +2,8 @@ import { useMemo } from 'react';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import { RichText } from '../Common/RichText';
+import 'video-react/dist/video-react.css';
+import { Player } from 'video-react';
 
 export const Video = ({ video }) => {
   const { type, caption } = video;
@@ -27,11 +29,16 @@ export const Video = ({ video }) => {
           </div>
         </div>
       );
-    } else if (domain === 'www.bilibili.com') {
-      console.log(pathname);
-      return <div>{pathname}</div>
+    } else if (domain === 'drive.rgq.plus') {
+      return (
+        <div className='mt-2'>
+          <Player>
+            <source src={link} />
+          </Player>
+        </div>
+      );
     }
-    return <div>{`${domain} is not supported yet`}</div>;
+    return <div className='mt-2'>{`${domain} is not supported yet`}</div>;
   } catch (e) {
     console.error(e);
     return <></>;

@@ -1,3 +1,4 @@
+export { Embed } from './Embed';
 export { Video } from './Video';
 export { Notion_Image } from './Notion_Image';
 export { To_do } from './To_do';
