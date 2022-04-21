@@ -52,16 +52,14 @@ export const Numbered_list_item = ({
   if (!layer) layer = 0;
   return (
     <div
-      className={` grid grid-cols-[minmax(2em,auto)_1fr] grid-flow-row  ${colors.default} ${colors[color]} align-top mt-2 `}>
-      <div className='self-baseline mr-2'>
+      className={`flex ${colors.default} ${colors[color]} items-start mt-2 `}>
+      <div className='flex items-center justify-start w-8 h-6'>
         {numberHandlers[layer % numberHandlers.length](number)}.
       </div>
       <div className=' self-baseline '>
         {rich_text.map((i, index) => (
           <RichText rich_text={i} key={index} />
         ))}
-      </div>
-      <div className=' col-start-2 col-end-3'>
         {children?.map((child, index) => {
           if (child.type === 'numbered_list_item') {
             child.layer = layer + 1;
@@ -74,7 +72,6 @@ export const Numbered_list_item = ({
               child.number = children[index - 1].number + 1;
             }
           }
-
           return blockMapper(child);
         })}
       </div>

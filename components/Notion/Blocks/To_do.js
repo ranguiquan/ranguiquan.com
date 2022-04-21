@@ -6,24 +6,24 @@ import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md';
 export const To_do = ({ to_do, children }) => {
   const { rich_text, color, checked } = to_do;
   return (
-    <div
-      // FIXME: Fix this layout.
-      className={` break-words grid grid-cols-[2em_minmax(auto,full)] grid-flow-row align-top mt-2 ${colors.default} ${colors[color]}`}>
-      <div className='self-baseline'>
-        <div className=' h-[1.5em] w-[1.5em]'>
-          {checked ? <MdCheckBox size='1.5em' /> : <MdCheckBoxOutlineBlank size='1.5em'/>}
+    <div className={`flex ${colors[color]} items-start mt-2 `}>
+      <div className=' flex-grow-0 flex-shrink-0 flex items-center justify-start w-8 h-6'>
+        {checked ? (
+          <MdCheckBox size='1.5em' />
+        ) : (
+          <MdCheckBoxOutlineBlank size='1.5em' />
+        )}
+      </div>
+      {/* <div className='flex'> */}
+        <div className='flex-1 break-words max-w-full'>
+          {rich_text.map((i, index) => (
+            <RichText rich_text={i} key={index} />
+          ))}
+          {children?.map((child) => {
+            return blockMapper(child);
+          })}{' '}
         </div>
-      </div>
-      <div className='self-baseline break-words max-w-full'>
-        {rich_text.map((i, index) => (
-          <RichText rich_text={i} key={index} />
-        ))}
-      </div>
-      <div className=' col-start-2 col-end-3'>
-        {children?.map((child) => {
-          return blockMapper(child);
-        })}{' '}
-      </div>
+      {/* </div> */}
     </div>
   );
 };

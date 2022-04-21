@@ -5,7 +5,7 @@ export const Paragraph = ({ paragraph }) => {
   // TODO: support children
   const { rich_text, color, children} = paragraph;
   return (
-    <p className={`${colors[color]} mt-2`}>
+    <p className={`${colors.default} ${colors[color]} mt-2`}>
       {rich_text.map((i, index) => (
         <RichText rich_text={i} key={index} />
       ))}
