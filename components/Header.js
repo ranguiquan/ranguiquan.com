@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import config from '../site.config';
+const { siteName } = config;
 
 const Header = () => {
   const routes = ['dev', 'dev', 'dev'];
@@ -8,7 +10,8 @@ const Header = () => {
       <div className='m-auto  w-full md:w-[768px] flex justify-between items-center h-full text-headline pl-4 pr-4'>
         <Link href={'/'} passHref>
           <div className=' cursor-pointer'>
-            <span className=' font-bold text-lg'>🚧dev.io</span>
+            <span >🚧</span>
+            <span className='ml-2 font-bold text-lg'>{siteName}</span>
           </div>
         </Link>
         <div>

@@ -6,7 +6,7 @@ import {
   getPageMeta,
 } from '../../lib/notion/page';
 import config from '../../site.config';
-const databaseID = config.BlogDatabaseID;
+const databaseID = config.blogDatabaseID;
 
 export async function getStaticPaths() {
   const page = await getPageList(databaseID);

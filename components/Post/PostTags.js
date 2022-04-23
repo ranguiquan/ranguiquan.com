@@ -1,7 +1,7 @@
 import React from 'react';
 export function PostTags({ tags }) {
   return (
-    <div className='space-x-2 pt-2 text-center'>
+    <div className='space-x-2 text-center'>
       {tags.map((tag) => {
         return <PostTag key={tag.id} name={tag.name} color={tag.color} />;
       })}

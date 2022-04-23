@@ -1,8 +1,14 @@
 const config = {
+
+  // [required]
+  // Your site's name, which will show up in the header and title.
+  siteName: 'rgq.plus',
   // [Required]
   // Notion database ID where you store your blog pages.
   // Put it in Vercel environment variable if you like.
-  BlogDatabaseID: process.env.BLOG_DATABASE_ID || '',
+  blogDatabaseID: process.env.BLOG_DATABASE_ID || '',
+
+  
 
   // [Optional]
   // Every request can retrieve 100 blocks due to API limit, this defines how many request you can send in one page.

@@ -4,7 +4,7 @@ import { getPageList } from '../lib/notion/page';
 import config from '../site.config';
 
 export async function getStaticProps() {
-  const databaseID = config.BlogDatabaseID;
+  const databaseID = config.blogDatabaseID;
   const data = await getPageList(databaseID);
   return {
     props: { data }, // will be passed to the page component as props
