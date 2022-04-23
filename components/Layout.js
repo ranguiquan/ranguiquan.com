@@ -2,7 +2,7 @@ import { useReducer } from 'react';
 import Footer from './Footer';
 import Header from './Header';
 import Model from './Model';
-import React, {useEffect} from 'react';
+import React  from 'react';
 
 const modelInitial = {
   isModelVisible: false,

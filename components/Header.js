@@ -3,7 +3,7 @@ import config from '../site.config';
 const { siteName } = config;
 
 const Header = () => {
-  const routes = ['dev', 'dev', 'dev'];
+  const routes = [];
 
   return (
     <header className='flex justify-center sticky top-0 z-10 h-16 bg-background/80 backdrop-blur-md '>
