@@ -13,7 +13,7 @@ const config = {
   // It defines how many requests you can send to Notion in one second in SSR.
   // By default it's 3 to meet the requirement of Notion's API limit.
   // You can bump it up for a faster render speed. Notion practice their API limit in a very loose way.
-  parallelRequestNumber: 10,
+  parallelRequestLimit: process.env.PARALLEL_REQUEST_LIMIT || 3,
 
 };
 
