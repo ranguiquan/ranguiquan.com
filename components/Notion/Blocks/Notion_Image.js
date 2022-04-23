@@ -4,7 +4,6 @@ import { RichText } from '../Common/RichText';
 import { useContext } from 'react';
 import { ModelDispatchContext } from '../../Layout';
 
-// TODO: add more nice features to this.
 export const Notion_Image = ({ image }) => {
   const [isModelShow, setIsModelShow] = useState(false);
   const modelDispatch = useContext(ModelDispatchContext);

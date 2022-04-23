@@ -1,5 +1,6 @@
 import { RichText } from '../Common/RichText';
 import { colors } from '../Common/color';
+import { blockMapper } from '../../../lib/notion/blockMapper';
 
 export const Paragraph = ({ paragraph }) => {
   // TODO: support children
@@ -12,6 +13,9 @@ export const Paragraph = ({ paragraph }) => {
       {rich_text.map((i, index) => (
         <RichText rich_text={i} key={index} />
       ))}
+      {children?.map((child) => {
+        return blockMapper(child);
+      })}
     </p>
   );
 };

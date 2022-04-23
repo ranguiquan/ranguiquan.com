@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <header className='flex justify-center sticky top-0 z-10 h-16 bg-background/80 backdrop-blur-md '>
-      <div className='m-auto  w-full md:w-[768px] flex justify-between items-center h-full text-headline pl-4 pr-4'>
+      <nav className='m-auto  w-full md:w-[768px] flex justify-between items-center h-full text-headline pl-4 pr-4'>
         <Link href={'/'} passHref>
           <div className=' cursor-pointer'>
             <span >🚧</span>
@@ -21,7 +21,7 @@ const Header = () => {
             })}
           </ul>
         </div>
-      </div>
+      </nav>
     </header>
   );
 };
