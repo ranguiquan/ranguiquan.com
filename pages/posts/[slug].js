@@ -5,13 +5,14 @@ import {
   getPageList,
   getPageMeta,
 } from '../../lib/notion/page';
+import config from '../../site.config';
+const databaseID = config.BlogDatabaseID;
 
 export async function getStaticPaths() {
-  const databaseID = process.env.DATABASE_ID;
   const page = await getPageList(databaseID);
 
   return {
-    paths: page.map((i) => {
+    paths: page?.map((i) => {
       return {
         params: {
           slug: i.id,

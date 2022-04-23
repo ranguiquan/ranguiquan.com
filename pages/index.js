@@ -1,8 +1,10 @@
 import { PostCard } from '../components/PostCard/PostCard';
 import { notion } from '../lib/notion/client';
 import { getPageList } from '../lib/notion/page';
+import config from '../site.config';
+
 export async function getStaticProps() {
-  const databaseID = process.env.DATABASE_ID;
+  const databaseID = config.BlogDatabaseID;
   const data = await getPageList(databaseID);
   return {
     props: { data }, // will be passed to the page component as props
