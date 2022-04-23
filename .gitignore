@@ -8,6 +8,7 @@
 # testing
 /coverage
 /mock
+/pages/testfield
 
 # next.js
 /.next/

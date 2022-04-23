@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^4.6.1",
     "@notionhq/client": "^1.0.4",
     "highlight.js": "^11.5.1",
     "limiter": "^2.1.0",
