@@ -7,7 +7,7 @@ export default function Footer({}) {
         <span className=''>{`©️ 2021 - ${new Date().getFullYear()}`}</span>
         <span className='ml-2'>by ranguiquan</span>
       </div>
-      <div className='flex justify-center items-center space-x-2 mt-2'>
+      <div className='flex justify-center items-center space-x-2 my-2'>
         <span>Powered by</span>
         <a href='https://nextjs.org/'>
           <Nextdotjs size={14} />
@@ -15,7 +15,7 @@ export default function Footer({}) {
         <a href='https://www.notion.so/'>
           <Notion size={14} />
         </a>
-        <span>hosted in</span>
+        <span className='pl-2'>Proudly hosted in</span>
         <a href='https://vercel.com/'>
           <Vercel size={14} />
         </a>
