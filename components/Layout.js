@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
             }`}>
             <Header />
             <div className=' flex justify-center text-rich-default'>
-              <div className=' w-full md:w-[768px] p-4 pt-0 overflow-hidden'>
+              <div className=' w-full md:w-[768px] p-4 pt-0'>
                 {children}
               </div>
             </div>

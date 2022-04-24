@@ -9,7 +9,7 @@ export const PostCard = ({ post }) => {
 
   return (
     <Link href={`/posts/${post.id}`} passHref>
-      <div className='flex justify-between rounded-3xl overflow-hidden hover:bg-gray-100 cursor-pointer transition duration-100 ease-out'>
+      <div className='flex justify-between rounded-3xl overflow-hidden cursor-pointer card-shadow hover:card-shadow-hover transition duration-150 ease-out'>
         <div className=' min-h-[150px] w-2/5 relative block'>
           {cover ? (
             <PostCoverImage cover={cover} />
