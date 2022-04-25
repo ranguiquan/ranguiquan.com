@@ -9,7 +9,7 @@ export const Callout = ({ callout, children }) => {
     <div
       className={`flex justify-start items-start ${
         color !== 'default' ? colors[color] : 'text-inherited'
-      }  mt-2 pt-6 pb-6 rounded overflow-hidden`}>
+      }  mt-2 py-6 pr-2 rounded overflow-hidden`}>
       <div className=' flex-shrink-0 flex-grow-0 w-16 flex justify-center '>
         {icon.emoji}
       </div>
