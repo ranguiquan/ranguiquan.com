@@ -3,6 +3,7 @@ import { Nextdotjs, Notion, Vercel } from '@icons-pack/react-simple-icons';
 export default function Footer({}) {
   return (
     <footer className='flex flex-col justify-center items-center text-rich-gray text-sm'>
+      {/* TODO: change this border color */}
       <div className='flex justify-center w-full lg:w-[1024px] border-t-2 pt-4'>
         <span className=''>{`©️ 2021 - ${new Date().getFullYear()}`}</span>
         <span className='ml-2'>by ranguiquan</span>

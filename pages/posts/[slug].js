@@ -6,6 +6,8 @@ import {
   getPageMeta,
 } from '../../lib/notion/page';
 import config from '../../site.config';
+import { getBookMarkURLMeta, appendMetadata } from '../../lib/notion/bookmarkUtils';
+
 const databaseID = config.blogDatabaseID;
 
 export async function getStaticPaths() {
@@ -29,7 +31,10 @@ export async function getStaticProps({ params }) {
   const pageID = slug;
   const pageMeta = await getPageMeta(pageID);
   const pageContent = await getPageContent(pageID);
-
+  await Promise.all(
+    pageContent
+      .map((item) => appendMetadata(item))
+  );
   return {
     props: { pageMeta, pageContent }, // will be passed to the page component as props
     revalidate: 60,
