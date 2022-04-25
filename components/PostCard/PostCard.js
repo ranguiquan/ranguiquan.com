@@ -14,7 +14,7 @@ export const PostCard = ({ post }) => {
       <div
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
-        className='flex justify-between rounded-3xl cursor-pointer card-shadow hover:card-shadow-hover transition duration-150 ease-out'>
+        className='flex justify-between rounded-3xl cursor-pointer card-shadow hover:card-shadow-hover transition duration-150 ease-out select-none'>
         {/* cover box */}
         <div className=' min-h-[150px] w-2/5 relative'>
           {/* cover image */}
