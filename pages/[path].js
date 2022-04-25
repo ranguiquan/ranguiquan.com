@@ -2,6 +2,7 @@ import { PostHead } from '../components/Post';
 import { blockMapper } from '../lib/notion/blockMapper';
 import { getPageContent, getPageMeta } from '../lib/notion/page';
 import config from '../site.config';
+import { handleBeforePageRender } from './../lib/notion/page';
 const { nav } = config;
 
 export async function getStaticPaths() {
@@ -27,6 +28,7 @@ export const getStaticProps = async ({ params }) => {
   const pageID = nav.filter((item) => item.name === path)[0].id;
   const pageMeta = await getPageMeta(pageID);
   const pageContent = await getPageContent(pageID);
+  await handleBeforePageRender(pageContent);
   return {
     props: {
       pageMeta,

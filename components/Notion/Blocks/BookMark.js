@@ -26,7 +26,7 @@ export const BookMark = ({ bookmark }) => {
       </a>
       <div className='flex flex-col items-center'>
         <div className=' mt-2 text-sm text-rich-gray whitespace-pre-wrap break-words max-w-full min-w-[1px]'>
-          {caption.map((item, index) => (
+          {caption?.map((item, index) => (
             <RichText rich_text={item} key={index} />
           ))}
         </div>
