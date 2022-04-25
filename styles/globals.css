@@ -25,8 +25,8 @@
 
   .card-shadow {
     box-shadow: 
-    18px 18px 60px rgba(0,0,0, 0.1),
-    5px 5px 20px rgba(0,0,0,0.15),
+    9px 9px 60px rgba(100,100,100, 0.05),
+    5px 5px 20px rgba(70,70,70,0.1),
     -18px -18px 30px rgba(255,255,255,0.5),
     inset 30px 0 30px rgba(255,255,255,0.5),
     inset 0 0 0 rgba(0,0,0,0.2)
@@ -34,8 +34,8 @@
 
   .card-shadow-hover {
     box-shadow:
-    0 0 0 rgba(0,0,0,0.15),
-    0 0 0 rgba(0,0,0,0.2),
+    0 0 0 rgba(50,50,50,0.1),
+    0 0 0 rgba(20,20,20,0.1),
     0 0 0 rgba(255,255,255,0),
     inset 0 0 0 rgba(255,255,255,0.5),
     inset -5px -5px 20px rgba(0,0,0,0.05)
