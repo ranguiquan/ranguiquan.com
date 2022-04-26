@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { RichText } from '../Common/RichText';
 import { useContext } from 'react';
-import { ModelDispatchContext } from '../../Layout';
+import { ModelDispatchContext } from '../../Site';
 
 export const Notion_Image = ({ image }) => {
   const [isModelShow, setIsModelShow] = useState(false);

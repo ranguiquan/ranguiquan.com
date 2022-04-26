@@ -1,5 +1,5 @@
 import React from 'react';
-import PostCoverImage from '../Common/PostCoverImage';
+import { PostCoverImage } from './PostCoverImage';
 
 export function PostCover({ cover }) {
   return (

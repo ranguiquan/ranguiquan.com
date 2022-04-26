@@ -1,16 +1,16 @@
 import Link from 'next/link';
-import PostCoverImage from '../Common/PostCoverImage';
-import { PostTags } from '../Post/PostTags';
+import { PostCoverImage } from './PostCoverImage';
+import { PostTags } from './PostTags';
 import Image from 'next/image';
-import defaultCover from '../../public/default_cover.webp';
+import defaultCover from '../../../public/default_cover.webp';
 import { useState } from 'react';
 
-export const PostCard = ({ post }) => {
+export const PostCard = ({ post, basePath }) => {
   const [isHover, setIsHover] = useState(false);
   const { cover, icon, name, tags } = post;
 
   return (
-    <Link href={`/posts/${post.id}`} passHref>
+    <Link href={`/${basePath}/${post.id}`} passHref>
       <div
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
