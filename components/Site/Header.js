@@ -13,17 +13,31 @@ export const Header = () => {
           </div>
         </Link>
         <div>
-          <ul className='flex space-x-2'>
-            {nav.map((item) => {
-              return (
-                <Link href={`/${item.name}`} key={item.id} passHref>
-                  <li
-                    key={item.id}
-                    className='cursor-pointer border-b-2 hover:border-transparent transition duration-100 font-semibold'>
-                    {item.name}
-                  </li>
-                </Link>
-              );
+          <ul className='flex space-x-4'>
+            {nav.slice(1, nav.length).map((item) => {
+              switch (item.type) {
+                case 'link':
+                  return (
+                    // open in a new tab
+                    <a href={item.id} key={item.id} target="_blank" rel="noopener noreferrer">
+                      <li
+                        key={item.id}
+                        className='cursor-pointer border-b-2 hover:border-transparent transition duration-100 font-semibold'>
+                        {item.name}
+                      </li>
+                    </a>
+                  );
+                default:
+                  return (
+                    <Link href={`/${item.name}`} key={item.id} passHref>
+                      <li
+                        key={item.id}
+                        className='cursor-pointer border-b-2 hover:border-transparent transition duration-100 font-semibold'>
+                        {item.name}
+                      </li>
+                    </Link>
+                  );
+              }
             })}
           </ul>
         </div>
