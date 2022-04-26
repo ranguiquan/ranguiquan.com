@@ -1,4 +1,4 @@
-import { PostHead } from '../../components/Post';
+import { PostHead } from '../../components/Site';
 import { blockMapper } from '../../lib/notion/blockMapper';
 import {
   getPageContent,
@@ -7,10 +7,7 @@ import {
   handleBeforePageRender,
 } from '../../lib/notion/page';
 import config from '../../site.config';
-import {
-  getBookMarkURLMeta,
-  appendMetadata,
-} from '../../lib/notion/bookmarkUtils';
+
 
 const databaseID = config.blogDatabaseID;
 

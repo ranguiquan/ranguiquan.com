@@ -1,6 +1,6 @@
 import { Nextdotjs, Notion, Vercel } from '@icons-pack/react-simple-icons';
 
-export default function Footer({}) {
+export const Footer = ({}) => {
   return (
     <footer className='flex flex-col justify-center items-center text-rich-gray text-sm'>
       {/* TODO: change this border color */}
@@ -23,4 +23,4 @@ export default function Footer({}) {
       </div>
     </footer>
   );
-}
+};

@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import PostCoverImage from '../Common/PostCoverImage';
-import { PostTags } from '../Post/PostTags';
+import { PostCoverImage } from './PostCoverImage';
+import { PostTags } from './PostTags';
 import Image from 'next/image';
-import defaultCover from '../../public/default_cover.webp';
+import defaultCover from '../../../public/default_cover.webp';
 import { useState } from 'react';
 
 export const PostCard = ({ post }) => {

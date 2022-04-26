@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import nextConfig from '../../next.config';
+import nextConfig from '../../../next.config';
 import { useMemo } from 'react';
 
-const PostCoverImage = ({ cover }) => {
+export const PostCoverImage = ({ cover }) => {
   const domain = useMemo(() => new URL(cover).hostname, [cover]);
   const isSupported = useMemo(() => {
     const supportedDomains = nextConfig.images.domains;
@@ -26,4 +26,3 @@ const PostCoverImage = ({ cover }) => {
   );
 };
 
-export default PostCoverImage;

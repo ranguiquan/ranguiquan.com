@@ -1,8 +1,8 @@
 import { useReducer } from 'react';
-import Footer from './Footer';
-import Header from './Header';
-import Model from './Model';
-import React  from 'react';
+import { Footer } from './Footer';
+import { Header } from './Header';
+import { Model } from './Model';
+import React from 'react';
 
 const modelInitial = {
   isModelVisible: false,
@@ -22,10 +22,9 @@ function modelReducer(state, action) {
   }
 }
 
-const Layout = ({ children }) => {
+export const Layout = ({ children }) => {
   const [modelState, modelDispatch] = useReducer(modelReducer, modelInitial);
 
-  
   return (
     <>
       <ModelDispatchContext.Provider value={modelDispatch}>
@@ -37,9 +36,7 @@ const Layout = ({ children }) => {
             }`}>
             <Header />
             <div className=' flex justify-center text-rich-default'>
-              <div className=' w-full md:w-[768px] p-4 pt-0'>
-                {children}
-              </div>
+              <div className=' w-full md:w-[768px] p-4 pt-0'>{children}</div>
             </div>
             <Footer />
           </div>
@@ -49,5 +46,3 @@ const Layout = ({ children }) => {
     </>
   );
 };
-
-export default Layout;

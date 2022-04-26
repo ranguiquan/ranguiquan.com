@@ -1,5 +1,4 @@
-import { PostCard } from '../components/PostCard/PostCard';
-import { notion } from '../lib/notion/client';
+import { PostCard } from '../components/Site';
 import { getPageList } from '../lib/notion/page';
 import config from '../site.config';
 
