@@ -7,14 +7,14 @@ import { MdDarkMode, MdLightMode } from 'react-icons/md';
 const { siteName, nav } = config;
 
 export const Header = () => {
-  const {theme, setTheme} = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(ThemeContext);
   useEffect(() => {
     if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
+      document.documentElement.classList.add('dark');
     } else {
-      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.remove('dark');
     }
-  }, [theme])
+  }, [theme]);
   return (
     <header
       className='flex justify-center sticky top-0 z-10 h-16 bg-white/80 dark:bg-black/80
@@ -29,7 +29,11 @@ export const Header = () => {
         <div className='flex space-x-4'>
           <button
             onClick={() => {
-              setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+              setTheme((prev) => {
+                const toggled = prev === 'dark' ? 'light' : 'dark';
+                localStorage.setItem('theme', toggled);
+                return toggled;
+              });
             }}>
             {theme === 'dark' ? (
               <MdLightMode size='1.5em' />
