@@ -15,10 +15,12 @@ export const PostHead = ({
   date
 }) => {
   return (
-    <div className='w-full space-y-2 border-b-2 pb-4 border-b-rich-gray_background'>
+    <div
+      className='w-full space-y-2 border-b-2 pb-4 
+    border-rich-gray_background dark:border-rich-gray_background-dark'>
       {cover && <PostCover cover={cover} />}
       <PostTitle icon={icon} name={name} />
-      <PostAuthor author={author} date={new Date(date)}/>
+      <PostAuthor author={author} date={new Date(date)} />
       {tags && <PostTags tags={tags} />}
     </div>
   );

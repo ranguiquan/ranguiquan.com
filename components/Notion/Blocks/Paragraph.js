@@ -3,7 +3,6 @@ import { colors } from '../Common/color';
 import { blockMapper } from '../../../lib/notion/blockMapper';
 
 export const Paragraph = ({ paragraph }) => {
-  // TODO: support children
   const { rich_text, color, children } = paragraph;
   return (
     <p

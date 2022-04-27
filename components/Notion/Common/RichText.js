@@ -67,7 +67,8 @@ export const RichText = ({ rich_text }) => {
   if (code) {
     decorated_text = (
       <code
-        className={`bg-rich-code_background text-rich-code rounded-md overflow-hidden font-mono`}>
+        className={`bg-rich-code_background dark:bg-rich-code_background-dark
+         text-rich-code dark:text-rich-code-dark rounded-md overflow-hidden font-mono`}>
         {decorated_text}
       </code>
     );

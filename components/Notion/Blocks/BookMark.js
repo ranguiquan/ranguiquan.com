@@ -10,7 +10,11 @@ export const BookMark = ({ bookmark }) => {
   return (
     <div className='mt-4 space-2'>
       <a href={url}>
-        <div className=' py-2 px-4 border-2 border-rich-gray_background rounded cursor-pointer transition duration-150 ease-out bg-white hover:bg-rich-gray_background'>
+        <div className=' py-2 px-4 border-2 
+        border-rich-gray_background dark:border-rich-gray_background-dark 
+        rounded cursor-pointer transition duration-150 ease-out
+        bg-white dark:bg-black hover:bg-rich-gray_background 
+        dark:hover:bg-rich-gray_background-dark'>
           <div className='flex flex-col relative space-y-1'>
             <div className=' truncate'>
               <span>{title}</span>

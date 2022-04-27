@@ -17,7 +17,6 @@ export const To_do = ({ to_do, children }) => {
           <MdCheckBoxOutlineBlank size='1.5em' />
         )}
       </div>
-      {/* TODO: */}
       {/* 太神奇了，这里为什么非得写 min-w-[1px] */}
       <div className='flex-1 whitespace-pre-wrap break-words max-w-full min-w-[1px]'>
         {rich_text.map((i, index) => (
@@ -30,4 +29,3 @@ export const To_do = ({ to_do, children }) => {
     </div>
   );
 };
-// max-w-[calc(100%-2rem)]
