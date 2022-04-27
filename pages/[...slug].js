@@ -82,10 +82,6 @@ export async function getStaticProps({ params }) {
 }
 
 const page = (props) => {
-  props.pageMeta &&
-    console.log(
-      props.pageMeta?.description.map((item) => item?.plain_text).join(' ')
-    );
   return (
     <>
       {props.pageList && (
