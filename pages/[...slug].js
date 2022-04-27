@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import { PostPage } from '../components/Site';
 import { PostCardDisplay } from '../components/Site/PostCardDisplay';
 import {
@@ -53,6 +54,7 @@ export async function getStaticProps({ params }) {
   const props = {};
   const navItem = nav.filter((item) => item.name === params.slug[0])[0];
   props.navItem = navItem;
+  props.slug = params.slug;
   if (params.slug.length === 1) {
     // if only have one slug
     switch (navItem.type) {
@@ -80,16 +82,35 @@ export async function getStaticProps({ params }) {
 }
 
 const page = (props) => {
+  props.pageMeta &&
+    console.log(
+      props.pageMeta?.description.map((item) => item?.plain_text).join(' ')
+    );
   return (
     <>
       {props.pageList && (
-        <PostCardDisplay
-          pageList={props.pageList}
-          basePath={props.navItem.name}
-        />
+        <>
+          <NextSeo
+            title={`${config.siteName}[${props.navItem?.name}]`}
+            canonical={[config.domain, ...new Array(props.slug)].join('/')}
+          />
+          <PostCardDisplay
+            pageList={props.pageList}
+            basePath={props.navItem.name}
+          />
+        </>
       )}
       {!props.pageList && (
-        <PostPage pageMeta={props.pageMeta} pageContent={props.pageContent} />
+        <>
+          <NextSeo
+            title={`${props.pageMeta?.name} [${props.navItem?.name}] - ${config.siteName}`}
+            canonical={[config.domain, ...new Array(props.slug)].join('/')}
+            description={props.pageMeta?.description
+              .map((item) => item?.plain_text)
+              .join(' ')}
+          />
+          <PostPage pageMeta={props.pageMeta} pageContent={props.pageContent} />
+        </>
       )}
     </>
   );

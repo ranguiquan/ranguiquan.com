@@ -14,7 +14,6 @@
     "domino": "^2.1.6",
     "highlight.js": "^11.5.1",
     "limiter": "^2.1.0",
-    "net": "^1.0.2",
     "next": "12.1.5",
     "next-seo": "^5.4.0",
     "page-metadata-parser": "^1.1.4",
@@ -23,7 +22,6 @@
     "react-icons": "^4.3.1",
     "react-lite-youtube-embed": "^2.2.1-a",
     "react-syntax-highlighter": "^15.5.0",
-    "url-metadata": "^2.5.0",
     "video-react": "^0.15.0"
   },
   "devDependencies": {

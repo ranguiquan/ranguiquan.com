@@ -1,6 +1,12 @@
+import { NextSeo } from 'next-seo';
 import { PostCard, PostPage } from '../components/Site';
 import { PostCardDisplay } from '../components/Site/PostCardDisplay';
-import { getPageContent, getPageList, getPageMeta, handleBeforePageRender } from '../lib/notion/page';
+import {
+  getPageContent,
+  getPageList,
+  getPageMeta,
+  handleBeforePageRender,
+} from '../lib/notion/page';
 import config from '../site.config';
 
 export async function getStaticProps() {
@@ -29,6 +35,7 @@ export async function getStaticProps() {
 export default function Home(props) {
   return (
     <>
+      <NextSeo title={config.siteName} canonical={config.domain} />
       {props.pageList && (
         <PostCardDisplay
           pageList={props.pageList}
