@@ -35,7 +35,7 @@ export const Layout = ({ children }) => {
               modelState.isModelVisible ? 'overflow-hidden h-auto' : ''
             }`}>
             <Header />
-            <div className=' flex justify-center text-rich-default'>
+            <div className=' flex justify-center text-rich-default dark:text-rich-default-dark'>
               <div className=' w-full md:w-[768px] p-4 pt-0'>{children}</div>
             </div>
             <Footer />

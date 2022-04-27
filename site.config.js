@@ -3,6 +3,10 @@ const config = {
   // Your site's name, which will show up in the header and title.
   siteName: 'rgq.plus',
 
+  // [Optional]
+  // For SEO.
+  domain: 'rgq.plus',
+
   // [Required]
   // Shown in footer.
   writerName: 'ranguiquan',
