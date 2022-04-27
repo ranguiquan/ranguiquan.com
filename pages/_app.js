@@ -8,15 +8,14 @@ export const ThemeContext = React.createContext();
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState('light');
   useEffect(() => {
-    if (localStorage.getItem('theme')) {
-      setTheme(localStorage.getItem('theme'));
+    const storedTheme = localStorage.getItem('theme')
+    if (storedTheme) {
+      setTheme(storedTheme);
     } else {
       localStorage.setItem('theme', 'light')
     }
   }, []);
-  useEffect(() => {
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+
   return (
     <>
       <ThemeContext.Provider value={{ theme, setTheme }}>
