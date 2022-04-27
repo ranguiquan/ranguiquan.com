@@ -42,7 +42,7 @@ export const PostCard = ({ post, basePath }) => {
           <div
             className={`min-h-[150px] w-full rounded-3xl overflow-hidden 
             absolute transition-all duration-150 ease-out -z-20
-            
+              hidden md:block
               ${
                 theme === 'dark' &&
                 isHover &&

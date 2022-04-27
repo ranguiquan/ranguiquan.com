@@ -11,9 +11,9 @@ const config = {
   // Shown in footer.
   writerName: 'ranguiquan',
 
-  // [Optional]
+  // [Required]
   // Shown in footer.
-  copyrightStartYear: 0 || new Date().getFullYear(),
+  copyrightStartYear: 2021,
 
   // [Optional]
   // Every request can only retrieve 100 blocks due to API limit.
