@@ -36,7 +36,9 @@ export const Layout = ({ children }) => {
             }`}>
             <Header />
             <div className=' flex justify-center text-rich-default dark:text-rich-default-dark'>
-              <div className=' w-full md:w-[768px] p-4 pt-0'>{children}</div>
+              <div className='flex flex-col items-start w-full md:w-[768px] p-4 pt-0 '>
+                {children}
+              </div>
             </div>
             <Footer />
           </div>
