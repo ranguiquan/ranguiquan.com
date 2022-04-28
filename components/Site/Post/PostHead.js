@@ -2,6 +2,7 @@ import { PostAuthor } from './PostAuthor';
 import { PostTags } from './PostTags';
 import { PostTitle } from './PostTitle';
 import { PostCover } from './PostCover';
+import { PostTime } from './PostTime';
 
 export const PostHead = ({
   name,
@@ -12,7 +13,8 @@ export const PostHead = ({
   tags,
   description,
   author,
-  date
+  date,
+  isDateHidden,
 }) => {
   return (
     <div
@@ -20,7 +22,10 @@ export const PostHead = ({
     border-rich-gray_background dark:border-rich-gray_background-dark'>
       {cover && <PostCover cover={cover} />}
       <PostTitle icon={icon} name={name} />
-      <PostAuthor author={author} date={new Date(date)} />
+      <div className=' space-x-2 flex justify-center font-semibold pt-2'>
+        {!isDateHidden && <PostTime date={new Date(date)} />}
+        <PostAuthor author={author} />
+      </div>
       {tags && <PostTags tags={tags} />}
     </div>
   );

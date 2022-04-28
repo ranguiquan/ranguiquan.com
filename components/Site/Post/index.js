@@ -1,3 +1,4 @@
+export { PostTime } from './PostTime';
 export { ContentTable } from './ContentTable';
 export { PostAuthor } from './PostAuthor';
 export { PostCard } from './PostCard';
