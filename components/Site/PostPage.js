@@ -22,7 +22,9 @@ export const PostPage = ({ pageMeta, pageContent }) => {
             return blockMapper(block);
           })}
         </main>
-        <ContentTable pageContent={pageContent} />
+        {!pageMeta?.isContentTableHidden && (
+          <ContentTable pageContent={pageContent} />
+        )}
       </div>
     </>
   );

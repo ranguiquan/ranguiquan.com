@@ -1,5 +1,9 @@
 function scrollToID(id) {
-  window.scrollTo({left: 0, top: findPosition(document.getElementById(id)) ,behavior: 'smooth'});
+  window.scrollTo({
+    left: 0,
+    top: findPosition(document.getElementById(id)),
+    behavior: 'smooth',
+  });
 }
 function findPosition(obj) {
   let currenttop = 0;
@@ -7,8 +11,8 @@ function findPosition(obj) {
     do {
       currenttop += obj.offsetTop;
     } while ((obj = obj.offsetParent));
-    // 64 is the height of head bar
-    return currenttop-64;
+    // 66 is a little bigger than the height of head bar 64px
+    return currenttop - 66;
   }
 }
 export const ContentTable = ({ pageContent }) => {
@@ -16,6 +20,19 @@ export const ContentTable = ({ pageContent }) => {
     e.preventDefault();
     scrollToID(e.target.hash.substring(1));
   };
+  // console.log(
+  //   pageContent?.filter(
+  //     (page) => ['heading_1', 'heading_2', 'heading_3'].includes(page.type)
+  //   )
+  // );
+  if (
+    pageContent?.filter(
+      (page) => ['heading_1', 'heading_2', 'heading_3'].includes(page.type)
+    ).length <= 3
+  ) {
+    return <></>;
+  }
+
   return (
     <div
       className='sticky hidden xl:block top-[64px] w-[256px]
@@ -28,7 +45,9 @@ export const ContentTable = ({ pageContent }) => {
             return (
               <a
                 href={`#${item.id}`}
-                className='block break-words hover:underline'
+                className='block break-words hover:underline 
+                text-rich-gray hover:text-rich-default
+                dark:text-rich-gray-dark dark:hover:text-rich-default-dark'
                 key={item.id}
                 onClick={handleAnchorClick}>
                 {item.heading_1.rich_text
@@ -40,7 +59,9 @@ export const ContentTable = ({ pageContent }) => {
             return (
               <a
                 href={`#${item.id}`}
-                className='block ml-4 break-words hover:underline'
+                className='block ml-4 break-words hover:underline
+                text-rich-gray hover:text-rich-default
+                dark:text-rich-gray-dark dark:hover:text-rich-default-dark'
                 key={item.id}
                 onClick={handleAnchorClick}>
                 {item.heading_2.rich_text
@@ -52,7 +73,9 @@ export const ContentTable = ({ pageContent }) => {
             return (
               <a
                 href={`#${item.id}`}
-                className='block ml-8 break-words hover:underline'
+                className='block ml-8 break-words hover:underline
+                text-rich-gray hover:text-rich-default
+                dark:text-rich-gray-dark dark:hover:text-rich-default-dark'
                 key={item.id}
                 onClick={handleAnchorClick}>
                 {item.heading_3.rich_text
