@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo';
 import { PostPage } from '../components/Site';
 import { PostCardDisplay } from '../components/Site/PostCardDisplay';
+import { getCommentPageList } from '../lib/notion';
 import {
   getPageList,
   getPageMeta,
@@ -42,7 +43,6 @@ export async function getStaticPaths() {
       }),
     ...paths,
   ];
-  // console.log('[dynamic path]', paths);
 
   return {
     paths,
@@ -60,52 +60,79 @@ export async function getStaticProps({ params }) {
     switch (navItem.type) {
       case 'database':
         props.pageList = await getPageList(navItem.id);
+        props.pageMeta = null;
+        props.pageContent = null;
         break;
       case 'page':
-        props.pageMeta = await getPageMeta(navItem.id);
-        props.pageContent = await getPageContent(navItem.id);
-        await handleBeforePageRender(props.pageContent);
+        props.pageList = null;
+        // props.pageMeta = await getPageMeta(navItem.id);
+        // props.pageContent = await getPageContent(navItem.id);
+        // props.pageList = await getCommentPageList(navItem.id);
+        // await handleBeforePageRender(pageContent);
+        await Promise.all([
+          getPageMeta(navItem.id).then((res) => (props.pageMeta = res)),
+          getPageContent(navItem.id)
+            .then((res) => (props.pageContent = res))
+            .then(() => handleBeforePageRender(props.pageContent)),
+          getCommentPageList(navItem.id).then(
+            (res) => (props.commentPageList = res)
+          ),
+        ]);
         break;
       default:
         break;
     }
   } else {
     // params has 2 slugs
-    props.pageMeta = await getPageMeta(params.slug[1]);
-    props.pageContent = await getPageContent(params.slug[1]);
-    await handleBeforePageRender(props.pageContent);
+
+    props.pageList = null;
+    // props.pageMeta = await getPageMeta(params.slug[1]);
+    // props.pageContent = await getPageContent(params.slug[1]);
+    // props.pageList = await getCommentPageList(params.slug[1]);
+    // await handleBeforePageRender(pageContent);
+    await Promise.all([
+      getPageMeta(params.slug[1]).then((res) => (props.pageMeta = res)),
+      getPageContent(params.slug[1])
+        .then((res) => (props.pageContent = res))
+        .then(() => handleBeforePageRender(props.pageContent)),
+      getCommentPageList(params.slug[1]).then(
+        (res) => (props.commentPageList = res)
+      ),
+    ]);
   }
   return {
     props: props,
-    revalidate: 60,
+    revalidate: 1,
   };
 }
 
-const page = (props) => {
+const page = ({ pageList, pageMeta, pageContent, navItem, slug, commentPageList }) => {
   return (
     <>
-      {props.pageList && (
+      {pageList && (
         <>
           <NextSeo
-            title={`${config.siteName}[${props.navItem?.name}]`}
-            canonical={[config.domain, ...new Array(props.slug)].join('/')}
+            title={`${config.siteName}[${navItem?.name}]`}
+            canonical={[config.domain, ...new Array(slug)].join('/')}
           />
-          <PostCardDisplay
-            pageList={props.pageList}
-            basePath={props.navItem.name}
-          />
+          <PostCardDisplay pageList={pageList} basePath={navItem.name} />
         </>
       )}
-      {!props.pageList && (
+      {!pageList && (
         <>
           <NextSeo
-            title={`${props.pageMeta?.name} [${props.navItem?.name}] - ${config.siteName}`}
-            canonical={[config.domain, ...new Array(props.slug)].join('/')}
-            description={props.pageMeta?.description
+            title={`${pageMeta?.name} [${navItem?.name}] - ${config.siteName}`}
+            canonical={[config.domain, ...new Array(slug)].join('/')}
+            description={pageMeta?.description
               .map((item) => item?.plain_text)
               .join(' ')}
           />
-          <PostPage pageMeta={props.pageMeta} pageContent={props.pageContent} />
+          <PostPage
+            pageMeta={pageMeta}
+            pageContent={pageContent}
+            // TODO:
+            commentPageList={commentPageList}
+          />
         </>
       )}
     </>

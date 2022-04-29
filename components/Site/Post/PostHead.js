@@ -22,7 +22,7 @@ export const PostHead = ({
     border-rich-gray_background dark:border-rich-gray_background-dark'>
       {cover && <PostCover cover={cover} />}
       <PostTitle icon={icon} name={name} />
-      <div className=' space-x-2 flex justify-center font-semibold pt-2'>
+      <div className=' space-x-4 flex justify-center font-semibold pt-2'>
         {!isDateHidden && <PostTime date={new Date(date)} />}
         <PostAuthor author={author} />
       </div>

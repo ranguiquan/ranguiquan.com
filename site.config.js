@@ -18,7 +18,7 @@ const config = {
   // [Optional]
   // Every request can only retrieve 100 blocks due to API limit.
   // It defines how many request you can send in one page.
-  // By default it's 50, it means one page can render 5000 blocks at most. 
+  // By default it's 50, it means one page can render 5000 blocks at most.
   // Change it as you need.
   contentRequestLimit: 50,
 
@@ -26,7 +26,7 @@ const config = {
   // It defines how many requests you can send parallelly to Notion in one second.
   // By default it's 3 to meet the requirement of Notion's API limit.
   // You can bump it up for a faster render speed. Notion limit their API in a very loose way.
-  parallelRequestLimit: 3,
+  parallelRequestLimit: 10,
 
   // [Required]
   // Configure site structure in the nav list below.
@@ -55,6 +55,8 @@ const config = {
       id: 'https://github.com/ranguiquan',
     },
   ],
+
+  commentDatabaseID: '6fbf0dcbb3f7422094eb08651dae84ac',
 };
 
 export default config;

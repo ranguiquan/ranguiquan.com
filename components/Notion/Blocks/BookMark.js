@@ -19,10 +19,10 @@ export const BookMark = ({ bookmark }) => {
             <div className=' truncate'>
               <span>{title}</span>
             </div>
-            <div className=' text-rich-gray text-sm '>
+            <div className=' text-rich-gray text-sm break-words'>
               <span>{description}</span>
             </div>
-            <div className=' text-sm'>
+            <div className=' text-sm truncate'>
               <span>{url}</span>
             </div>
           </div>
