@@ -23,6 +23,7 @@ export const Comment = ({ pageMeta, commentPageList }) => {
     setIsCommentSending(true);
     createCommentPage({ commentInput, pageID, pageTitle })
       .then((res) => {
+        setCommentInput('')
         setList((prev) => [res, ...prev]);
         setIsCommentSending(false);
       })
@@ -82,6 +83,7 @@ export const Comment = ({ pageMeta, commentPageList }) => {
       {/* input area  */}
       <form className='flex flex-col w-full mt-2'>
         <textarea
+          value={commentInput}
           onChange={(e) => setCommentInput(e.target.value)}
           name='commentInput'
           rows={5}
