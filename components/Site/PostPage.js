@@ -1,8 +1,9 @@
 import { PostHead } from '../Site';
 import { blockMapper } from '../../lib/notion/blockMapper';
 import { ContentTable } from './Post';
+import { Comment } from './Comment';
 
-export const PostPage = ({ pageMeta, pageContent }) => {
+export const PostPage = ({ pageMeta, pageContent, commentPageList }) => {
   return (
     <>
       <PostHead {...pageMeta} />
@@ -26,6 +27,11 @@ export const PostPage = ({ pageMeta, pageContent }) => {
           <ContentTable pageContent={pageContent} />
         )}
       </div>
+      <Comment
+        key={pageMeta?.id}
+        pageMeta={pageMeta}
+        commentPageList={commentPageList}
+      />
     </>
   );
 };

@@ -20,11 +20,6 @@ export const ContentTable = ({ pageContent }) => {
     e.preventDefault();
     scrollToID(e.target.hash.substring(1));
   };
-  // console.log(
-  //   pageContent?.filter(
-  //     (page) => ['heading_1', 'heading_2', 'heading_3'].includes(page.type)
-  //   )
-  // );
   if (
     pageContent?.filter(
       (page) => ['heading_1', 'heading_2', 'heading_3'].includes(page.type)
