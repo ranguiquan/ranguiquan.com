@@ -132,6 +132,7 @@ const page = ({ pageList, pageMeta, pageContent, navItem, slug, commentPageList 
             pageContent={pageContent}
             // TODO:
             commentPageList={commentPageList}
+            slug={slug}
           />
         </>
       )}
