@@ -8,22 +8,24 @@ import {
   retrieve_nested_children,
 } from '../../../lib/notion';
 import { CommentCard } from './CommentCard';
+import config from '../../../site.config';
 const iconMapper = {
   GitHub: <Github />,
   Google: <Google />,
 };
 
-export const Comment = ({ pageMeta, commentPageList }) => {
+export const Comment = ({ pageMeta, commentPageList, slug }) => {
+  const url = ['https://', config.domain, '/', slug?.join('/')].join('');
   const { data: session } = useSession();
   const [providers, setProviders] = useState('');
 
   const [list, setList] = useState(commentPageList);
   const [isCommentSending, setIsCommentSending] = useState(false);
-  const handleSubmit = ({ commentInput, pageID, pageTitle }) => {
+  const handleSubmit = ({ commentInput, pageID, pageTitle, url }) => {
     setIsCommentSending(true);
-    createCommentPage({ commentInput, pageID, pageTitle })
+    createCommentPage({ commentInput, pageID, pageTitle, url })
       .then((res) => {
-        setCommentInput('')
+        setCommentInput('');
         setList((prev) => [res, ...prev]);
         setIsCommentSending(false);
       })
@@ -101,6 +103,7 @@ export const Comment = ({ pageMeta, commentPageList }) => {
                 commentInput: commentInput,
                 pageID: pageMeta.id,
                 pageTitle: pageMeta.name,
+                url: url,
               });
             }}
             className='px-4 -y-1 rounded-lg font-semibold 
