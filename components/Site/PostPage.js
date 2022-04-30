@@ -2,6 +2,7 @@ import { PostHead } from '../Site';
 import { blockMapper } from '../../lib/notion/blockMapper';
 import { ContentTable } from './Post';
 import { Comment } from './Comment';
+import config from '../../site.config';
 
 export const PostPage = ({ pageMeta, pageContent, commentPageList, slug }) => {
   return (
@@ -27,12 +28,14 @@ export const PostPage = ({ pageMeta, pageContent, commentPageList, slug }) => {
           <ContentTable pageContent={pageContent} />
         )}
       </div>
-      <Comment
-        key={pageMeta?.id}
-        pageMeta={pageMeta}
-        commentPageList={commentPageList}
-        slug={slug}
-      />
+      {!pageMeta?.isCommentHidden && config.isCommentEnable && (
+        <Comment
+          key={pageMeta?.id}
+          pageMeta={pageMeta}
+          commentPageList={commentPageList}
+          slug={slug}
+        />
+      )}
     </>
   );
 };

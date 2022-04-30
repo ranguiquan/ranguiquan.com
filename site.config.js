@@ -56,6 +56,8 @@ const config = {
     },
   ],
 
+  isCommentEnable: true,
+
   commentDatabaseID: '6fbf0dcbb3f7422094eb08651dae84ac',
 };
 
