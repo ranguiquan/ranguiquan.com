@@ -35,7 +35,6 @@ export const Comment = ({ pageMeta, commentPageList, slug }) => {
     getProviders().then((pro) => setProviders(pro));
   }, [setProviders]);
   const [commentInput, setCommentInput] = useState('');
-  if (pageMeta?.isCommentHidden) return;
   return (
     <div
       className='flex flex-col mt-2 pt-2 w-full border-t-2 
