@@ -15,7 +15,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.4.5, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.3.1":
   version: 7.17.9
   resolution: "@babel/runtime@npm:7.17.9"
   dependencies:
@@ -776,13 +776,6 @@ __metadata:
   version: 2.0.0
   resolution: "chownr@npm:2.0.0"
   checksum: c57cf9dd0791e2f18a5ee9c1a299ae6e801ff58fee96dc8bfd0dcb4738a6ce58dd252a3605b1c93c6418fe4f9d5093b28ffbf4d66648cb2a9c67eaef9679be2f
-  languageName: node
-  linkType: hard
-
-"classnames@npm:^2.2.6":
-  version: 2.3.1
-  resolution: "classnames@npm:2.3.1"
-  checksum: 14db8889d56c267a591f08b0834989fe542d47fac659af5a539e110cc4266694e8de86e4e3bbd271157dbd831361310a8293e0167141e80b0f03a0f175c80960
   languageName: node
   linkType: hard
 
@@ -1771,13 +1764,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:^11.5.1":
-  version: 11.5.1
-  resolution: "highlight.js@npm:11.5.1"
-  checksum: bff556101d7691c6275ad19318e368fc971cd0621ef3d86222f5373df7d8191a2fc1ffd47f118138cbcf85e5fe91cfeefaecd6184f49a3ec18090955efc9edef
-  languageName: node
-  linkType: hard
-
 "http-cache-semantics@npm:^4.1.0":
   version: 4.1.0
   resolution: "http-cache-semantics@npm:4.1.0"
@@ -2210,13 +2196,6 @@ __metadata:
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
   checksum: ad580b4bdbb7ca1f7abf7e1bce63a9a0b98e370cf40194b03380a46b4ed799c9573029599caebc1b14e3f24b111aef72b96674a56cfa105e0f5ac70546cdc005
-  languageName: node
-  linkType: hard
-
-"lodash.throttle@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "lodash.throttle@npm:4.1.1"
-  checksum: 129c0a28cee48b348aef146f638ef8a8b197944d4e9ec26c1890c19d9bf5a5690fe11b655c77a4551268819b32d27f4206343e30c78961f60b561b8608c8c805
   languageName: node
   linkType: hard
 
@@ -3074,6 +3053,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ranguiquan.com@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "ranguiquan.com@workspace:."
+  dependencies:
+    "@icons-pack/react-simple-icons": ^4.6.1
+    "@notionhq/client": ^1.0.4
+    autoprefixer: ^10.4.4
+    domino: ^2.1.6
+    eslint: 8.13.0
+    eslint-config-next: 12.1.5
+    limiter: ^2.1.0
+    next: 12.1.5
+    next-auth: ^4.3.4
+    next-seo: ^5.4.0
+    page-metadata-parser: ^1.1.4
+    postcss: ^8.4.12
+    react: 18.0.0
+    react-dom: 18.0.0
+    react-icons: ^4.3.1
+    react-lite-youtube-embed: ^2.2.1-a
+    react-syntax-highlighter: ^15.5.0
+    tailwindcss: ^3.0.24
+  languageName: unknown
+  linkType: soft
+
 "react-dom@npm:18.0.0":
   version: 18.0.0
   resolution: "react-dom@npm:18.0.0"
@@ -3153,15 +3157,6 @@ __metadata:
   dependencies:
     picomatch: ^2.2.1
   checksum: 1ced032e6e45670b6d7352d71d21ce7edf7b9b928494dcaba6f11fba63180d9da6cd7061ebc34175ffda6ff529f481818c962952004d273178acd70f7059b320
-  languageName: node
-  linkType: hard
-
-"redux@npm:^4.0.1":
-  version: 4.2.0
-  resolution: "redux@npm:4.2.0"
-  dependencies:
-    "@babel/runtime": ^7.9.2
-  checksum: 75f3955c89b3f18edf5411e5fb482aa2e4f41a416183e8802a6bf6472c4fc3d47675b8b321d147f8af8e0f616436ac507bf5a25f1c4d6180e797b549c7db2c1d
   languageName: node
   linkType: hard
 
@@ -3266,33 +3261,6 @@ __metadata:
   checksum: c3076ebcc22a6bc252cb0b9c77561795256c22b757f40c0d8110b1300723f15ec0fc8685e8d4ea6d7666f36c79ccc793b1939c748bf36f18f542744a4e379fcc
   languageName: node
   linkType: hard
-
-"rgqplus@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "rgqplus@workspace:."
-  dependencies:
-    "@icons-pack/react-simple-icons": ^4.6.1
-    "@notionhq/client": ^1.0.4
-    autoprefixer: ^10.4.4
-    domino: ^2.1.6
-    eslint: 8.13.0
-    eslint-config-next: 12.1.5
-    highlight.js: ^11.5.1
-    limiter: ^2.1.0
-    next: 12.1.5
-    next-auth: ^4.3.4
-    next-seo: ^5.4.0
-    page-metadata-parser: ^1.1.4
-    postcss: ^8.4.12
-    react: 18.0.0
-    react-dom: 18.0.0
-    react-icons: ^4.3.1
-    react-lite-youtube-embed: ^2.2.1-a
-    react-syntax-highlighter: ^15.5.0
-    tailwindcss: ^3.0.24
-    video-react: ^0.15.0
-  languageName: unknown
-  linkType: soft
 
 "rimraf@npm:^3.0.2":
   version: 3.0.2
@@ -3741,22 +3709,6 @@ __metadata:
   version: 2.3.0
   resolution: "v8-compile-cache@npm:2.3.0"
   checksum: adb0a271eaa2297f2f4c536acbfee872d0dd26ec2d76f66921aa7fc437319132773483344207bdbeee169225f4739016d8d2dbf0553913a52bb34da6d0334f8e
-  languageName: node
-  linkType: hard
-
-"video-react@npm:^0.15.0":
-  version: 0.15.0
-  resolution: "video-react@npm:0.15.0"
-  dependencies:
-    "@babel/runtime": ^7.4.5
-    classnames: ^2.2.6
-    lodash.throttle: ^4.1.1
-    prop-types: ^15.7.2
-    redux: ^4.0.1
-  peerDependencies:
-    react: ^15.0.0 || ^16.0.0 || ^17.0.0
-    react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 7b8b4eed6c3b2fa093274b548a8d3765bf4a256d3dc23e5352bd3a0e1fcc833bd264b46c4c3e09e20ecf21c4fc166ffadae81007e9596d9b93e19da752588ffa
   languageName: node
   linkType: hard
 
