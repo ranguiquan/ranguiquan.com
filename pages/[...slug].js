@@ -106,7 +106,14 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const page = ({ pageList, pageMeta, pageContent, navItem, slug, commentPageList }) => {
+const page = ({
+  pageList,
+  pageMeta,
+  pageContent,
+  navItem,
+  slug,
+  commentPageList,
+}) => {
   return (
     <>
       {pageList && (
@@ -126,6 +133,14 @@ const page = ({ pageList, pageMeta, pageContent, navItem, slug, commentPageList 
             description={pageMeta?.description
               .map((item) => item?.plain_text)
               .join(' ')}
+            openGraph={{
+              type: 'website',
+              url: ['https://', config.domain, '/', slug?.join('/')].join(''),
+              title: `${pageMeta?.name} [${navItem?.name}] - ${config.siteName}`,
+              description: pageMeta?.description
+                .map((item) => item?.plain_text)
+                .join(' '),
+            }}
           />
           <PostPage
             pageMeta={pageMeta}
