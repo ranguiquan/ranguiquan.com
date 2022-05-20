@@ -3,7 +3,7 @@ import { blockMapper } from '../../lib/notion/blockMapper';
 import { ContentTable } from './Post';
 import { Comment } from './Comment';
 import config from '../../site.config';
-import {Sinaweibo} from '@icons-pack/react-simple-icons'
+import { Sinaweibo } from '@icons-pack/react-simple-icons';
 
 export const PostPage = ({ pageMeta, pageContent, commentPageList, slug }) => {
   return (
@@ -29,21 +29,21 @@ export const PostPage = ({ pageMeta, pageContent, commentPageList, slug }) => {
           <ContentTable pageContent={pageContent} />
         )}
       </div>
-      <div className='hidden lg:flex justify-center items-center w-10 h-10 fixed right-8 bottom-2 rounded-full 
-      bg-rich-red_background
+      <div
+        className='hidden lg:flex justify-center items-center w-10 h-10 fixed right-8 bottom-4 rounded-full 
+   text-white bg-red-500
       dark:bg-rich-red_background-dark'>
-
-      <a
-        href={`http://service.weibo.com/share/share.php?appkey=&title=${
-          pageMeta.name
-        }&url=${['https://', config.domain, '/', slug?.join('/')].join(
-          ''
-          )}&style=simple&pic=${pageMeta.cover}&sharesource=weibo`}
+        <a
+          href={`http://service.weibo.com/share/share.php?appkey=&title=${
+            pageMeta?.name
+          }&url=${['https://', config.domain, '/', slug?.join('/')].join(
+            ''
+          )}&style=simple&pic=${pageMeta?.cover}&sharesource=weibo`}
           target='_blank'
           rel='noreferrer'>
-        <Sinaweibo size={'1.5rem'}/>
-      </a>
-          </div>
+          <Sinaweibo size={'1.5rem'} />
+        </a>
+      </div>
       {!pageMeta?.isCommentHidden && config.isCommentEnable && (
         <Comment
           key={pageMeta?.id}
