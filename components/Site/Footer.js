@@ -5,14 +5,14 @@ export const Footer = ({}) => {
   return (
     <footer
       className='flex flex-col justify-center items-center text-rich-gray 
-    dark:text-rich-gray-dark text-sm'>
+    dark:text-rich-gray-dark text-sm'
+    >
       <div
         className='flex justify-center w-full lg:w-[768px] 
       border-rich-gray_background dark:border-rich-gray_background-dark
-        border-t-2 pt-4'>
-        <span className=''>{`©️ ${
-          config.copyrightStartYear
-        } - ${new Date().getFullYear()}`}</span>
+        border-t-2 pt-4'
+      >
+        <span className=''>{`©️ ${config.copyrightStartYear} - ${new Date().getFullYear()}`}</span>
         <span className='ml-2'>by {config.writerName}</span>
       </div>
       <div className='flex justify-center items-center space-x-2 my-2'>

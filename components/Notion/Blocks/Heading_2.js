@@ -8,7 +8,8 @@ export const Heading_2 = ({ heading_2, id }) => {
       id={id}
       className={`${
         color !== 'default' ? colors[color] : 'text-inherited'
-      } text-2xl mt-8 mb-4 font-bold whitespace-pre-wrap break-words max-w-full min-w-[1px]`}>
+      } text-2xl mt-8 mb-4 font-bold whitespace-pre-wrap break-words max-w-full min-w-[1px]`}
+    >
       {rich_text.map((i, index) => (
         <RichText rich_text={i} key={index} />
       ))}

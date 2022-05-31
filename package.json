@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "prettier -w . && eslint --fix .",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^4.6.1",
@@ -27,8 +28,15 @@
     "autoprefixer": "^10.4.4",
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.5",
+    "husky": ">=6",
+    "lint-staged": ">=10",
     "postcss": "^8.4.12",
+    "prettier": "^2.6.2",
     "tailwindcss": "^3.0.24"
   },
-  "packageManager": "yarn@3.2.0"
+  "packageManager": "yarn@3.2.0",
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
 }

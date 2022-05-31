@@ -16,7 +16,9 @@ const months = [
 export const PostTime = ({ date }) => {
   return (
     <span>{`${date.toLocaleString('en-US', {
-      month: 'short', day:'numeric', year: 'numeric'
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
     })}`}</span>
   );
 };

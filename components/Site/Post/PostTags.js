@@ -9,7 +9,7 @@ export function PostTags({ tags }) {
   );
 }
 
-// This is an efficient way of dynamic class. 
+// This is an efficient way of dynamic class.
 // From https://github.com/tailwindlabs/tailwindcss/discussions/3461
 const colors = {
   default: {
@@ -57,10 +57,9 @@ const colors = {
 export const PostTag = ({ name, color }) => {
   return (
     <span
-      className={`rounded-md cursor-pointer px-1 py-0 mt-2 inline-block text-sm ${colors[color].bg} ${colors[color].text}`}>
+      className={`rounded-md cursor-pointer px-1 py-0 mt-2 inline-block text-sm ${colors[color].bg} ${colors[color].text}`}
+    >
       {name}
     </span>
   );
 };
-
-

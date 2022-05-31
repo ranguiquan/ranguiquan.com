@@ -10,14 +10,9 @@ export const Notion_Image = ({ image }) => {
   const handleImgClick = () => {
     modelDispatch({
       type: 'ADD_CONTENT',
-      payload: (
-        <img
-          src={url}
-          alt={joined_caption_text}
-        />
-      ),
+      payload: <img src={url} alt={joined_caption_text} />,
     });
-  }
+  };
   const { caption, type } = image;
   const joined_caption_text = caption.map((item) => item.plain_text).join(' ');
   const { url } = image[type];
@@ -28,13 +23,10 @@ export const Notion_Image = ({ image }) => {
         <div
           className={`lex-1 w-auto overflow-hidden relative rounded ${
             isModelShow ? 'cursor-pointer' : 'cursor-zoom-in'
-          }`}>
+          }`}
+        >
           {/* 正常文件流图片 */}
-          <img
-            src={url}
-            alt={joined_caption_text}
-            onClick={() => handleImgClick()}
-          />
+          <img src={url} alt={joined_caption_text} onClick={() => handleImgClick()} />
         </div>
         <div className=' mt-2 text-sm text-rich-gray whitespace-pre-wrap break-words max-w-full min-w-[1px]'>
           {caption.map((item, index) => (

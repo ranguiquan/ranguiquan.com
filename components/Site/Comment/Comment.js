@@ -39,7 +39,8 @@ export const Comment = ({ pageMeta, commentPageList, slug }) => {
     <div
       className='flex flex-col mt-2 pt-2 w-full border-t-2 
       border-rich-gray_background dark:border-rich-gray_background-dark
-      '>
+      '
+    >
       {/* Signed in as {session.user.email} <br /> */}
       <div className='flex justify-between items-center pt-8'>
         <div className='font-semibold text-xl'>COMMENT</div>
@@ -51,7 +52,8 @@ export const Comment = ({ pageMeta, commentPageList, slug }) => {
                 <div
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
-                  className=' cursor-pointer'>
+                  className=' cursor-pointer'
+                >
                   {iconMapper[provider.name]}
                 </div>
               ))}
@@ -59,11 +61,8 @@ export const Comment = ({ pageMeta, commentPageList, slug }) => {
         )}
         {session && (
           <div className='flex items-center space-x-4'>
-            <img
-              src={session.user.image}
-              alt='avatar'
-              className='h-8 w-8 rounded-full'
-            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={session.user.image} alt='avatar' className='h-8 w-8 rounded-full' />
             <button
               onClick={() => signOut()}
               className='px-4 py-1 rounded-lg font-semibold text-sm
@@ -71,7 +70,8 @@ export const Comment = ({ pageMeta, commentPageList, slug }) => {
             hover:text-rich-red hover:dark:text-rich-red-dark
             bg-rich-red_background dark:bg-rich-red_background-dark
             transition duration-100
-            '>
+            '
+            >
               <div className='flex items-center space-x-2'>
                 <MdLogout size='1.5em' />
                 <span>LOG OUT</span>
@@ -92,7 +92,8 @@ export const Comment = ({ pageMeta, commentPageList, slug }) => {
           wrap='soft'
           className='bg-rich-gray_background dark:bg-rich-gray_background-dark
           outline-none py-2 px-3  resize-none
-          rounded'></textarea>
+          rounded'
+        ></textarea>
         <div className='flex justify-end mt-2'>
           <button
             disabled={isCommentSending}
@@ -108,7 +109,8 @@ export const Comment = ({ pageMeta, commentPageList, slug }) => {
             className='px-4 -y-1 rounded-lg font-semibold 
         bg-rich-blue_background dark:bg-rich-blue_background-dark
         text-rich-blue dark:text-rich-default-dark
-        hover:text-rich-default hover:dark:text-rich-blue-dark'>
+        hover:text-rich-default hover:dark:text-rich-blue-dark'
+          >
             SEND
           </button>
         </div>

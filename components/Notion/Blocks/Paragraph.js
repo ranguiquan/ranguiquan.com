@@ -8,7 +8,8 @@ export const Paragraph = ({ paragraph }) => {
     <p
       className={`${
         color !== 'default' ? colors[color] : 'text-inherited'
-      } mt-2 whitespace-pre-wrap break-words max-w-full min-w-[1px]`}>
+      } mt-2 whitespace-pre-wrap break-words max-w-full min-w-[1px]`}
+    >
       {rich_text.map((i, index) => (
         <RichText rich_text={i} key={index} />
       ))}

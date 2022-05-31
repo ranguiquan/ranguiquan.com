@@ -23,16 +23,16 @@ export default NextAuth({
 
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
-    const isAllowedToSignIn = true
-    if (isAllowedToSignIn) {
-      return true
-    } else {
-      // Return false to display a default error message
-      return false
-      // Or you can return a URL to redirect to:
-      // return '/unauthorized'
-    }
-  },
+      const isAllowedToSignIn = true;
+      if (isAllowedToSignIn) {
+        return true;
+      } else {
+        // Return false to display a default error message
+        return false;
+        // Or you can return a URL to redirect to:
+        // return '/unauthorized'
+      }
+    },
     async jwt({ token, account }) {
       // Persist the OAuth access_token to the token right after signin
       if (account) {

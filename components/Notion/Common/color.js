@@ -24,17 +24,12 @@ export const colors = {
   pink: 'text-rich-pink dark:text-rich-pink-dark',
   red: 'text-rich-red dark:text-rich-red-dark',
   gray_background: 'bg-rich-gray_background dark:bg-rich-gray_background-dark',
-  brown_background:
-    'bg-rich-brown_background dark:bg-rich-brown_background-dark',
-  orange_background:
-    'bg-rich-orange_background dark:bg-rich-orange_background-dark',
-  yellow_background:
-    'bg-rich-yellow_background dark:bg-rich-yellow_background-dark',
-  green_background:
-    'bg-rich-green_background dark:bg-rich-green_background-dark',
+  brown_background: 'bg-rich-brown_background dark:bg-rich-brown_background-dark',
+  orange_background: 'bg-rich-orange_background dark:bg-rich-orange_background-dark',
+  yellow_background: 'bg-rich-yellow_background dark:bg-rich-yellow_background-dark',
+  green_background: 'bg-rich-green_background dark:bg-rich-green_background-dark',
   blue_background: 'bg-rich-blue_background dark:bg-rich-gray_background-dark',
-  purple_background:
-    'bg-rich-purple_background dark:bg-rich-purple_background-dark',
+  purple_background: 'bg-rich-purple_background dark:bg-rich-purple_background-dark',
   pink_background: 'bg-rich-pink_background dark:bg-rich-pink_background-dark',
   red_background: 'bg-rich-red_background dark:bg-rich-red_background-dark',
 };

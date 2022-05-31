@@ -19,7 +19,8 @@ export const PostHead = ({
   return (
     <div
       className='w-full space-y-2 border-b-2 pb-4 
-    border-rich-gray_background dark:border-rich-gray_background-dark'>
+    border-rich-gray_background dark:border-rich-gray_background-dark'
+    >
       {cover && <PostCover cover={cover} />}
       <PostTitle icon={icon} name={name} />
       <div className=' space-x-4 flex justify-center font-semibold pt-2'>

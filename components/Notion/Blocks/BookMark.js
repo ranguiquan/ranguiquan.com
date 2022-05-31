@@ -5,23 +5,28 @@ import { RichText } from '../Common/RichText';
 
 export const BookMark = ({ bookmark }) => {
   const { url, caption, metadata } = bookmark;
-  const { description, image, title } = metadata;
+  const { image, title } = metadata;
+  const description = metadata?.description;
 
   return (
     <div className='mt-4 space-2'>
       <a href={url}>
-        <div className=' py-2 px-4 border-2 
+        <div
+          className=' py-2 px-4 border-2 
         border-rich-gray_background dark:border-rich-gray_background-dark 
         rounded cursor-pointer transition duration-150 ease-out
         bg-white dark:bg-black hover:bg-rich-gray_background 
-        dark:hover:bg-rich-gray_background-dark'>
+        dark:hover:bg-rich-gray_background-dark'
+        >
           <div className='flex flex-col relative space-y-1'>
             <div className=' truncate'>
               <span>{title}</span>
             </div>
-            <div className=' text-rich-gray text-sm break-words'>
-              <span>{description}</span>
-            </div>
+            {description && (
+              <div className=' text-rich-gray text-sm break-words'>
+                <span>{description}</span>
+              </div>
+            )}
             <div className=' text-sm truncate'>
               <span>{url}</span>
             </div>

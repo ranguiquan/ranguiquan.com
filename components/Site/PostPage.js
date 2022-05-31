@@ -13,10 +13,7 @@ export const PostPage = ({ pageMeta, pageContent, commentPageList, slug }) => {
         <main className='w-full md:w-[calc(768px-2rem)] shrink-0 grow-0'>
           {pageContent?.map((block, index) => {
             if (block.type === 'numbered_list_item') {
-              if (
-                index === 0 ||
-                pageContent[index - 1].type !== 'numbered_list_item'
-              ) {
+              if (index === 0 || pageContent[index - 1].type !== 'numbered_list_item') {
                 block.number = 1;
               } else {
                 block.number = pageContent[index - 1].number + 1;
@@ -25,22 +22,23 @@ export const PostPage = ({ pageMeta, pageContent, commentPageList, slug }) => {
             return blockMapper(block);
           })}
         </main>
-        {!pageMeta?.isContentTableHidden && (
-          <ContentTable pageContent={pageContent} />
-        )}
+        {!pageMeta?.isContentTableHidden && <ContentTable pageContent={pageContent} />}
       </div>
       <div
         className='hidden lg:flex justify-center items-center w-10 h-10 fixed right-8 bottom-4 rounded-full 
    text-white bg-red-500
-      dark:bg-rich-red_background-dark'>
+      dark:bg-rich-red_background-dark'
+      >
         <a
-          href={`http://service.weibo.com/share/share.php?appkey=&title=${
-            pageMeta?.name
-          }&url=${['https://', config.domain, '/', slug?.join('/')].join(
-            ''
-          )}&style=simple&pic=${pageMeta?.cover}&sharesource=weibo`}
+          href={`http://service.weibo.com/share/share.php?appkey=&title=${pageMeta?.name}&url=${[
+            'https://',
+            config.domain,
+            '/',
+            slug?.join('/'),
+          ].join('')}&style=simple&pic=${pageMeta?.cover}&sharesource=weibo`}
           target='_blank'
-          rel='noreferrer'>
+          rel='noreferrer'
+        >
           <Sinaweibo size={'1.5rem'} />
         </a>
       </div>

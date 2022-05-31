@@ -74,9 +74,7 @@ export async function getStaticProps({ params }) {
           getPageContent(navItem.id)
             .then((res) => (props.pageContent = res))
             .then(() => handleBeforePageRender(props.pageContent)),
-          getCommentPageList(navItem.id).then(
-            (res) => (props.commentPageList = res)
-          ),
+          getCommentPageList(navItem.id).then((res) => (props.commentPageList = res)),
         ]);
         break;
       default:
@@ -95,9 +93,7 @@ export async function getStaticProps({ params }) {
       getPageContent(params.slug[1])
         .then((res) => (props.pageContent = res))
         .then(() => handleBeforePageRender(props.pageContent)),
-      getCommentPageList(params.slug[1]).then(
-        (res) => (props.commentPageList = res)
-      ),
+      getCommentPageList(params.slug[1]).then((res) => (props.commentPageList = res)),
     ]);
   }
   return {
@@ -106,14 +102,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const page = ({
-  pageList,
-  pageMeta,
-  pageContent,
-  navItem,
-  slug,
-  commentPageList,
-}) => {
+const page = ({ pageList, pageMeta, pageContent, navItem, slug, commentPageList }) => {
   return (
     <>
       {pageList && (
@@ -130,16 +119,12 @@ const page = ({
           <NextSeo
             title={`${pageMeta?.name} [${navItem?.name}] - ${config.siteName}`}
             canonical={[config.domain, ...new Array(slug)].join('/')}
-            description={pageMeta?.description
-              .map((item) => item?.plain_text)
-              .join(' ')}
+            description={pageMeta?.description.map((item) => item?.plain_text).join(' ')}
             openGraph={{
               type: 'website',
               url: ['https://', config.domain, '/', slug?.join('/')].join(''),
               title: `${pageMeta?.name} [${navItem?.name}] - ${config.siteName}`,
-              description: pageMeta?.description
-                .map((item) => item?.plain_text)
-                .join(' '),
+              description: pageMeta?.description.map((item) => item?.plain_text).join(' '),
             }}
           />
           <PostPage

@@ -42,19 +42,13 @@ function numberToString(num) {
 
 const numberHandlers = [numberToString, numberToRoman, numberToAlphabet];
 
-export const Numbered_list_item = ({
-  numbered_list_item,
-  children,
-  layer,
-  number,
-}) => {
+export const Numbered_list_item = ({ numbered_list_item, children, layer, number }) => {
   const { rich_text, color } = numbered_list_item;
   if (!layer) layer = 0;
   return (
     <div
-      className={`flex ${
-        color !== 'default' ? colors[color] : 'text-inherited'
-      } items-start mt-2 `}>
+      className={`flex ${color !== 'default' ? colors[color] : 'text-inherited'} items-start mt-2 `}
+    >
       <div className='flex items-center justify-start w-8 h-6'>
         {numberHandlers[layer % numberHandlers.length](number)}.
       </div>
@@ -65,10 +59,7 @@ export const Numbered_list_item = ({
         {children?.map((child, index) => {
           if (child.type === 'numbered_list_item') {
             child.layer = layer + 1;
-            if (
-              index === 0 ||
-              children[index - 1].type !== 'numbered_list_item'
-            ) {
+            if (index === 0 || children[index - 1].type !== 'numbered_list_item') {
               child.number = 1;
             } else {
               child.number = children[index - 1].number + 1;
