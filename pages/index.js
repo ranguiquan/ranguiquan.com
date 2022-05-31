@@ -37,14 +37,9 @@ export default function Home(props) {
     <>
       <NextSeo title={config.siteName} canonical={config.domain} />
       {props.pageList && (
-        <PostCardDisplay
-          pageList={props.pageList}
-          basePath={props.navItem.name}
-        />
+        <PostCardDisplay pageList={props.pageList} basePath={props.navItem.name} />
       )}
-      {!props.pageList && (
-        <PostPage pageMeta={props.pageMeta} pageContent={props.pageContent} />
-      )}
+      {!props.pageList && <PostPage pageMeta={props.pageMeta} pageContent={props.pageContent} />}
     </>
   );
 }

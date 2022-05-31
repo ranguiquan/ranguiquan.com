@@ -1,4 +1,4 @@
-import { colors } from "./color";
+import { colors } from './color';
 
 // to format '\n' in plain_text to <br />
 const plain_text_formatter = (plain_text) => {
@@ -24,22 +24,20 @@ export const RichText = ({ rich_text }) => {
   if (bold) {
     decorated_text = (
       <strong
-        className={`font-bold ${italic ? 'italic' : ''} ${
-          strikethrough ? 'line-through' : ''
-        } ${underline ? 'underline' : ''} ${
-          color !== 'default' ? colors[color] : 'text-inherited'
-        } ${code ? 'pl-2 pr-2' : ''}`}>
+        className={`font-bold ${italic ? 'italic' : ''} ${strikethrough ? 'line-through' : ''} ${
+          underline ? 'underline' : ''
+        } ${color !== 'default' ? colors[color] : 'text-inherited'} ${code ? 'pl-2 pr-2' : ''}`}
+      >
         {decorated_text}
       </strong>
     );
   } else if (italic) {
     decorated_text = (
       <em
-        className={`italic ${strikethrough ? 'line-through' : ''} ${
-          underline ? 'underline' : ''
-        } ${color !== 'default' ? colors[color] : 'text-inherited'} ${
-          code ? 'pl-2 pr-2' : ''
-        }`}>
+        className={`italic ${strikethrough ? 'line-through' : ''} ${underline ? 'underline' : ''} ${
+          color !== 'default' ? colors[color] : 'text-inherited'
+        } ${code ? 'pl-2 pr-2' : ''}`}
+      >
         {decorated_text}
       </em>
     );
@@ -48,7 +46,8 @@ export const RichText = ({ rich_text }) => {
       <del
         className={`line-through ${underline ? 'underline' : ''} ${
           color !== 'default' ? colors[color] : 'text-inherited'
-        } ${code ? 'pl-2 pr-2' : ''}`}>
+        } ${code ? 'pl-2 pr-2' : ''}`}
+      >
         {decorated_text}
       </del>
     );
@@ -57,7 +56,8 @@ export const RichText = ({ rich_text }) => {
       <span
         className={`${underline ? 'underline' : ''} ${
           color !== 'default' ? colors[color] : 'text-inherited'
-        } ${code ? 'pl-2 pr-2' : ''}`}>
+        } ${code ? 'pl-2 pr-2' : ''}`}
+      >
         {decorated_text}
       </span>
     );
@@ -68,16 +68,15 @@ export const RichText = ({ rich_text }) => {
     decorated_text = (
       <code
         className={`bg-rich-code_background dark:bg-rich-code_background-dark
-         text-rich-code dark:text-rich-code-dark rounded-md overflow-hidden font-mono`}>
+         text-rich-code dark:text-rich-code-dark rounded-md overflow-hidden font-mono`}
+      >
         {decorated_text}
       </code>
     );
   }
   if (href) {
     decorated_text = (
-      <a
-        href={href}
-        className={`inline underline hover:no-underline text-rich-underline`}>
+      <a href={href} className={`inline underline hover:no-underline text-rich-underline`}>
         {decorated_text}
       </a>
     );
@@ -85,4 +84,3 @@ export const RichText = ({ rich_text }) => {
 
   return <>{decorated_text}</>;
 };
-

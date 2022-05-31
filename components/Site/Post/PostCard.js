@@ -21,7 +21,8 @@ export const PostCard = ({ post, basePath }) => {
           theme === 'dark'
             ? 'card-shadow-dark hover:card-shadow-hover-dark'
             : 'card-shadow hover:card-shadow-hover'
-        } transition duration-150 ease-out select-none`}>
+        } transition duration-150 ease-out select-none`}
+      >
         {/* cover box */}
         <div className=' min-h-[150px] w-2/5 relative'>
           {/* cover image */}
@@ -43,27 +44,12 @@ export const PostCard = ({ post, basePath }) => {
             className={`min-h-[150px] w-full rounded-3xl overflow-hidden 
             absolute transition-all duration-150 ease-out -z-20
               hidden md:block
-              ${
-                theme === 'dark' &&
-                isHover &&
-                'blur-sm scale-100 opacity-100'
-              }
-              ${
-                theme === 'dark' &&
-                !isHover &&
-                'blur-lg scale-110 opacity-100'
-              }
-              ${
-                theme === 'light' &&
-                isHover &&
-                'right-0 blur-none scale-100 opacity-0'
-              }
-              ${
-                theme === 'light' &&
-                !isHover &&
-                'right-4 blur-lg scale-90 opacity-75'
-              }
-            `}>
+              ${theme === 'dark' && isHover && 'blur-sm scale-100 opacity-100'}
+              ${theme === 'dark' && !isHover && 'blur-lg scale-110 opacity-100'}
+              ${theme === 'light' && isHover && 'right-0 blur-none scale-100 opacity-0'}
+              ${theme === 'light' && !isHover && 'right-4 blur-lg scale-90 opacity-75'}
+            `}
+          >
             {cover ? (
               <PostCoverImage cover={cover} />
             ) : (

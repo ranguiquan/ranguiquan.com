@@ -18,7 +18,8 @@ export const Header = () => {
   return (
     <header
       className='flex justify-center sticky top-0 z-10 h-16 bg-white/80 dark:bg-black/80
-     backdrop-blur-md '>
+     backdrop-blur-md '
+    >
       <nav className='m-auto  w-full md:w-[768px] flex justify-between items-center h-fullttext-rich-default dark:text-rich-default-dark  pl-4 pr-4'>
         <Link href={'/'} passHref>
           <div className=' cursor-pointer'>
@@ -34,12 +35,9 @@ export const Header = () => {
                 localStorage.setItem('theme', toggled);
                 return toggled;
               });
-            }}>
-            {theme === 'dark' ? (
-              <MdLightMode size='1.5em' />
-            ) : (
-              <MdDarkMode size='1.5em' />
-            )}
+            }}
+          >
+            {theme === 'dark' ? <MdLightMode size='1.5em' /> : <MdDarkMode size='1.5em' />}
           </button>
           <ul className='flex space-x-4'>
             {nav.slice(1, nav.length).map((item) => {
@@ -47,14 +45,11 @@ export const Header = () => {
                 case 'link':
                   return (
                     // open in a new tab
-                    <a
-                      href={item.id}
-                      key={item.id}
-                      target='_blank'
-                      rel='noopener noreferrer'>
+                    <a href={item.id} key={item.id} target='_blank' rel='noopener noreferrer'>
                       <li
                         key={item.id}
-                        className='cursor-pointer border-b-2 hover:border-transparent transition duration-100 font-semibold'>
+                        className='cursor-pointer border-b-2 hover:border-transparent transition duration-100 font-semibold'
+                      >
                         {item.name}
                       </li>
                     </a>
@@ -64,7 +59,8 @@ export const Header = () => {
                     <Link href={`/${item.name}`} key={item.id} passHref>
                       <li
                         key={item.id}
-                        className='cursor-pointer border-b-2 hover:border-transparent transition duration-100 font-semibold'>
+                        className='cursor-pointer border-b-2 hover:border-transparent transition duration-100 font-semibold'
+                      >
                         {item.name}
                       </li>
                     </Link>

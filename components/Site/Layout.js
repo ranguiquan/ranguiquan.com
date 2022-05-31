@@ -30,10 +30,7 @@ export const Layout = ({ children }) => {
       <ModelDispatchContext.Provider value={modelDispatch}>
         {/* remove the strange blue color on mobile */}
         <div className='remove-tap-highlight'>
-          <div
-            className={`${
-              modelState.isModelVisible ? 'overflow-hidden h-auto' : ''
-            }`}>
+          <div className={`${modelState.isModelVisible ? 'overflow-hidden h-auto' : ''}`}>
             <Header />
             <div className=' flex justify-center text-rich-default dark:text-rich-default-dark'>
               <div className='flex flex-col items-start w-full md:w-[768px] p-4 pt-0 '>

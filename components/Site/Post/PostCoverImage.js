@@ -8,21 +8,16 @@ export const PostCoverImage = ({ cover }) => {
     const supportedDomains = nextConfig.images.domains;
     return !!supportedDomains.find((domainItem) => domainItem === domain);
   }, [domain]);
-  if(!isSupported) console.error('[PostCoverImage]: Unsupported cover image domain: ', domain);
+  if (!isSupported) console.error('[PostCoverImage]: Unsupported cover image domain: ', domain);
 
   return (
     <>
       {isSupported && (
-        <Image
-          src={cover}
-          alt='cover'
-          layout='fill'
-          className='object-cover '
-          priority
-        />
+        <Image src={cover} alt='cover' layout='fill' className='object-cover ' priority />
       )}
-      {!isSupported && <div className='p-4 text-rich-red'>Unsupported cover image, please contact Admin.</div>}
+      {!isSupported && (
+        <div className='p-4 text-rich-red'>Unsupported cover image, please contact Admin.</div>
+      )}
     </>
   );
 };
-

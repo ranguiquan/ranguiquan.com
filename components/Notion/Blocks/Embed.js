@@ -26,7 +26,8 @@ export const Embed = ({ embed }) => {
                 border='0'
                 frameBorder='no'
                 framespacing='0'
-                allowFullScreen={true}></iframe>{' '}
+                allowFullScreen={true}
+              ></iframe>{' '}
               <div className='flex flex-col items-center'>
                 <div className=' mt-2 text-sm text-rich-gray whitespace-pre-wrap break-words max-w-full min-w-[1px]'>
                   {caption.map((item, index) => (

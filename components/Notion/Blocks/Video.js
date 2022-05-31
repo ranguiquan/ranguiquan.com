@@ -27,7 +27,7 @@ export const Video = ({ video }) => {
           </div>
         </div>
       );
-    } 
+    }
     return <div className='mt-2'>{`${domain} is not supported yet`}</div>;
   } catch (e) {
     console.error(e);

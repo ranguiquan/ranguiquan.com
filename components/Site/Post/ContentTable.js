@@ -21,9 +21,8 @@ export const ContentTable = ({ pageContent }) => {
     scrollToID(e.target.hash.substring(1));
   };
   if (
-    pageContent?.filter(
-      (page) => ['heading_1', 'heading_2', 'heading_3'].includes(page.type)
-    ).length <= 3
+    pageContent?.filter((page) => ['heading_1', 'heading_2', 'heading_3'].includes(page.type))
+      .length <= 3
   ) {
     return <></>;
   }
@@ -33,7 +32,8 @@ export const ContentTable = ({ pageContent }) => {
       className='sticky hidden xl:block top-[64px] w-[256px]
    dark:bg-black
      bg-[#fafafa] dark:card-shadow-dark
-     rounded-3xl p-4 space-y-2'>
+     rounded-3xl p-4 space-y-2'
+    >
       {pageContent?.map((item) => {
         switch (item.type) {
           case 'heading_1':
@@ -44,10 +44,9 @@ export const ContentTable = ({ pageContent }) => {
                 text-rich-gray hover:text-rich-default
                 dark:text-rich-gray-dark dark:hover:text-rich-default-dark'
                 key={item.id}
-                onClick={handleAnchorClick}>
-                {item.heading_1.rich_text
-                  ?.map((rich) => rich.plain_text)
-                  .join(' ')}
+                onClick={handleAnchorClick}
+              >
+                {item.heading_1.rich_text?.map((rich) => rich.plain_text).join(' ')}
               </a>
             );
           case 'heading_2':
@@ -58,10 +57,9 @@ export const ContentTable = ({ pageContent }) => {
                 text-rich-gray hover:text-rich-default
                 dark:text-rich-gray-dark dark:hover:text-rich-default-dark'
                 key={item.id}
-                onClick={handleAnchorClick}>
-                {item.heading_2.rich_text
-                  ?.map((rich) => rich.plain_text)
-                  .join(' ')}
+                onClick={handleAnchorClick}
+              >
+                {item.heading_2.rich_text?.map((rich) => rich.plain_text).join(' ')}
               </a>
             );
           case 'heading_3':
@@ -72,10 +70,9 @@ export const ContentTable = ({ pageContent }) => {
                 text-rich-gray hover:text-rich-default
                 dark:text-rich-gray-dark dark:hover:text-rich-default-dark'
                 key={item.id}
-                onClick={handleAnchorClick}>
-                {item.heading_3.rich_text
-                  ?.map((rich) => rich.plain_text)
-                  .join(' ')}
+                onClick={handleAnchorClick}
+              >
+                {item.heading_3.rich_text?.map((rich) => rich.plain_text).join(' ')}
               </a>
             );
           default:
