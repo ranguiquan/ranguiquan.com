@@ -24,9 +24,11 @@ export const RichText = ({ rich_text }) => {
   if (bold) {
     decorated_text = (
       <strong
-        className={`font-bold ${italic ? 'italic' : ''} ${strikethrough ? 'line-through' : ''} ${
-          underline ? 'underline' : ''
-        } ${color !== 'default' ? colors[color] : 'text-inherited'} ${code ? 'pl-2 pr-2' : ''}`}
+        className={` font- font-bold ${italic ? 'italic' : ''} ${
+          strikethrough ? 'line-through' : ''
+        } ${underline ? 'underline' : ''} ${
+          color !== 'default' ? colors[color] : 'text-inherited'
+        } ${code ? 'pl-2 pr-2' : ''}`}
       >
         {decorated_text}
       </strong>

@@ -17,10 +17,13 @@ export const Header = () => {
   }, [theme]);
   return (
     <header
-      className='flex justify-center sticky top-0 z-10 h-16 bg-white/80 dark:bg-black/80
-     backdrop-blur-md '
+      className='flex justify-center sticky top-0 z-10 h-16 bg-white/80 
+      dark:bg-black/80 backdrop-blur-md'
     >
-      <nav className='m-auto  w-full md:w-[768px] flex justify-between items-center h-fullttext-rich-default dark:text-rich-default-dark  pl-4 pr-4'>
+      <nav
+        className='m-auto  w-full md:w-[768px] flex justify-between items-center 
+      h-fullttext-rich-default dark:text-rich-default-dark  pl-4 pr-4'
+      >
         <Link href={'/'} passHref>
           <div className=' cursor-pointer'>
             <span>🚧</span>
