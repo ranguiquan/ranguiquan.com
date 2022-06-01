@@ -1,8 +1,15 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   darkMode: 'class',
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'Noto Sans SC', 'Noto Sans TC', ...defaultTheme.fontFamily.sans],
+        serif: ['Aleo', 'Noto Serif SC', 'Noto Serif TC', ...defaultTheme.fontFamily.serif],
+        mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
+      },
       colors: {
         background: '#fffffe',
         headline: '#272343',

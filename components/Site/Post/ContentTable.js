@@ -29,7 +29,7 @@ export const ContentTable = ({ pageContent }) => {
 
   return (
     <div
-      className='sticky hidden xl:block top-[64px] w-[256px]
+      className='font-serif sticky hidden xl:block top-[64px] w-[256px]
    dark:bg-black
      bg-[#fafafa] dark:card-shadow-dark
      rounded-3xl p-4 space-y-2'

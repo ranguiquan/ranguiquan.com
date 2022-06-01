@@ -41,6 +41,55 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/aleo@npm:^4.5.7":
+  version: 4.5.7
+  resolution: "@fontsource/aleo@npm:4.5.7"
+  checksum: da017c8c7e15a8a294ebae09d4c87f08c187616478251ab62bef0c14b75badce26405947113dd027a2326488610b0d534e0f8239300db805f00a50bf53b85080
+  languageName: node
+  linkType: hard
+
+"@fontsource/inter@npm:^4.5.10":
+  version: 4.5.10
+  resolution: "@fontsource/inter@npm:4.5.10"
+  checksum: c947c5184f9ce7959fcccd716d0dde8156b5ed9c14b4ba27ee181fb2b05a136a49d99ed00c382551b64ecae010320ef7c062b1944b70260280ca0fcde93bd4f2
+  languageName: node
+  linkType: hard
+
+"@fontsource/jetbrains-mono@npm:^4.5.8":
+  version: 4.5.8
+  resolution: "@fontsource/jetbrains-mono@npm:4.5.8"
+  checksum: 0992e488220b61b5c29f3b77f2eb83a3e1bda72623ab982cb6c30df68e21e3ffecc93cf51bc6f8d0ed1fd93f641d263591fee36647e16f779d694c98229cc536
+  languageName: node
+  linkType: hard
+
+"@fontsource/noto-sans-sc@npm:^4.5.10":
+  version: 4.5.10
+  resolution: "@fontsource/noto-sans-sc@npm:4.5.10"
+  checksum: 07da4f844b53d6ab38f9716217b4deb68026896e1799b3edc34a1bfbbd8eb3f1be0f835f57c56454241ca20b268a43a0a13b03fc454d6248f082b272fd362d13
+  languageName: node
+  linkType: hard
+
+"@fontsource/noto-sans-tc@npm:^4.5.10":
+  version: 4.5.10
+  resolution: "@fontsource/noto-sans-tc@npm:4.5.10"
+  checksum: 97d20428f5d4207755574ee782febf623c92aa5582d4c748e4cd7389abdf7bba466a0b273cbfdd719f2f5705611a793f169f04cdd816d6b24cc73bda4ad30e18
+  languageName: node
+  linkType: hard
+
+"@fontsource/noto-serif-sc@npm:^4.5.10":
+  version: 4.5.10
+  resolution: "@fontsource/noto-serif-sc@npm:4.5.10"
+  checksum: 0495274dfd59ce3c225ec5447106f23428e3125473df3edf33c0b5f4d862b1ac5c84460ac74092b7a4f5714ae37b11a5e91c14123266523389f18f073a6989e4
+  languageName: node
+  linkType: hard
+
+"@fontsource/noto-serif-tc@npm:^4.5.10":
+  version: 4.5.10
+  resolution: "@fontsource/noto-serif-tc@npm:4.5.10"
+  checksum: a08237223f33f6bc11a9f49c39b76337078ba76962f6e6ae53ad5919691ff94d36aca46d0e01c7087fe23dd420f272bf17bcc25abd3d523d4a6039b5a1dc0df6
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.1.3":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
@@ -3305,6 +3354,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ranguiquan.com@workspace:."
   dependencies:
+    "@fontsource/aleo": ^4.5.7
+    "@fontsource/inter": ^4.5.10
+    "@fontsource/jetbrains-mono": ^4.5.8
+    "@fontsource/noto-sans-sc": ^4.5.10
+    "@fontsource/noto-sans-tc": ^4.5.10
+    "@fontsource/noto-serif-sc": ^4.5.10
+    "@fontsource/noto-serif-tc": ^4.5.10
     "@icons-pack/react-simple-icons": ^4.6.1
     "@notionhq/client": ^1.0.4
     autoprefixer: ^10.4.4

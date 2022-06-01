@@ -3,6 +3,13 @@ import '../styles/globals.css';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { SessionProvider } from 'next-auth/react';
+import '@fontsource/inter';
+import '@fontsource/aleo';
+import '@fontsource/noto-sans-sc';
+import '@fontsource/noto-serif-sc';
+import '@fontsource/noto-sans-tc';
+import '@fontsource/noto-serif-tc';
+import '@fontsource/jetbrains-mono';
 
 export const ThemeContext = React.createContext();
 

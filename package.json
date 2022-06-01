@@ -10,6 +10,13 @@
     "postinstall": "husky install"
   },
   "dependencies": {
+    "@fontsource/aleo": "^4.5.7",
+    "@fontsource/inter": "^4.5.10",
+    "@fontsource/jetbrains-mono": "^4.5.8",
+    "@fontsource/noto-sans-sc": "^4.5.10",
+    "@fontsource/noto-sans-tc": "^4.5.10",
+    "@fontsource/noto-serif-sc": "^4.5.10",
+    "@fontsource/noto-serif-tc": "^4.5.10",
     "@icons-pack/react-simple-icons": "^4.6.1",
     "@notionhq/client": "^1.0.4",
     "domino": "^2.1.6",
