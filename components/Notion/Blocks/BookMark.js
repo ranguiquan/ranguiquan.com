@@ -5,7 +5,8 @@ import { RichText } from '../Common/RichText';
 
 export const BookMark = ({ bookmark }) => {
   const { url, caption, metadata } = bookmark;
-  const { image, title } = metadata;
+  // const { image, title } = metadata;
+  const title = metadata?.title;
   const description = metadata?.description;
 
   return (
