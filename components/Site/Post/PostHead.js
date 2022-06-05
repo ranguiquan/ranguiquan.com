@@ -20,7 +20,7 @@ export const PostHead = ({
 }) => {
   return (
     <>
-      {isHeadHidden && (
+      {!isHeadHidden && (
         <div
           className='w-full space-y-2 border-b-2 pb-4 
     border-rich-gray_background dark:border-rich-gray_background-dark'
