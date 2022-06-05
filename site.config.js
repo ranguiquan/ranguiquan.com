@@ -40,20 +40,25 @@ const config = {
   //
   nav: [
     {
-      name: 'blog',
-      type: 'database',
-      id: 'c1e6f3acbf7e4d58a0b72f15554aa431',
-    },
-    {
       name: 'about',
       type: 'page',
       id: '98fe2fe9860743e99fe8e5d8af5c16b8',
     },
     {
-      name: 'github',
-      type: 'link',
-      id: 'https://github.com/ranguiquan',
+      name: 'tech',
+      type: 'database',
+      id: 'c1e6f3acbf7e4d58a0b72f15554aa431',
     },
+    {
+      name: 'life',
+      type: 'database',
+      id: '8444515940e744dbbcd94d24261508b9',
+    },
+    // {
+    //   name: 'github',
+    //   type: 'link',
+    //   id: 'https://github.com/ranguiquan',
+    // },
   ],
 
   isCommentEnable: true,

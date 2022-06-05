@@ -15,19 +15,25 @@ export const PostHead = ({
   author,
   date,
   isDateHidden,
+  isTitleHidden,
+  isHeadHidden,
 }) => {
   return (
-    <div
-      className='w-full space-y-2 border-b-2 pb-4 
+    <>
+      {isHeadHidden && (
+        <div
+          className='w-full space-y-2 border-b-2 pb-4 
     border-rich-gray_background dark:border-rich-gray_background-dark'
-    >
-      {cover && <PostCover cover={cover} />}
-      <PostTitle icon={icon} name={name} />
-      <div className=' space-x-4 flex justify-center font-semibold pt-2'>
-        {!isDateHidden && <PostTime date={new Date(date)} />}
-        <PostAuthor author={author} />
-      </div>
-      {tags && <PostTags tags={tags} />}
-    </div>
+        >
+          {cover && <PostCover cover={cover} />}
+          {!isTitleHidden && <PostTitle icon={icon} name={name} />}
+          <div className=' space-x-4 flex justify-center font-semibold pt-2'>
+            {!isDateHidden && <PostTime date={new Date(date)} />}
+            <PostAuthor author={author} />
+          </div>
+          {tags && <PostTags tags={tags} />}
+        </div>
+      )}
+    </>
   );
 };
